@@ -1,7 +1,7 @@
 from .db import db
 
 
-class Image(db.Model, UserMixin):
+class Image(db.Model):
     __tablename__ = 'images'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -11,8 +11,8 @@ class Image(db.Model, UserMixin):
     home = db.relationship("Home", back_populates="images")
 
     def to_dict(self):
-    return {
-        'id': self.id,
-        'imageUrl': self.imageUrl,
-        'homeId': self.homeId,
-    }
+        return {
+            'id': self.id,
+            'imageUrl': self.imageUrl,
+            'homeId': self.homeId,
+        }

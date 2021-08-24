@@ -5,11 +5,11 @@ class Home(db.Model):
     __tablename__ = 'homes'
 
     id = db.Column(db.Integer, primary_key=True)
-    price = db.Column(db.Integer(255), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
     stAddress = db.Column(db.String(255), nullable=False)
     city = db.Column(db.String(25), nullable=False)
     state = db.Column(db.String, nullable=False)
-    zipCode = db.Column(db.Integer(10), nullable=False)
+    zipCode = db.Column(db.Integer, nullable=False)
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
     lotSize = db.Column(db.Integer, nullable=False)
@@ -37,6 +37,6 @@ class Home(db.Model):
             'beds': self.beds,
             'bath': self.bath,
             'status': self.status,
-            'userId': self.userId
+            'userId': self.userId,
             'createdAt': self.createdAt
         }

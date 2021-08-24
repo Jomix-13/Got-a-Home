@@ -1,7 +1,7 @@
 from .db import db
 
 
-class Question(db.Model, UserMixin):
+class Question(db.Model):
     __tablename__ = 'questions'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -14,11 +14,11 @@ class Question(db.Model, UserMixin):
     home = db.relationship("Home", back_populates="questions")
 
     def to_dict(self):
-    return {
-        'id': self.id,
-        'question': self.question,
-        'userId': self.userId,
-        'homeId': self.homeId,
-        'username': self.user.username,
-        'createdAt': self.createdAt
-    }
+        return {
+            'id': self.id,
+            'question': self.question,
+            'userId': self.userId,
+            'homeId': self.homeId,
+            'username': self.user.username,
+            'createdAt': self.createdAt
+        }

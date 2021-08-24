@@ -32,7 +32,7 @@ def seed_users():
     db.session.add(Messi)
     db.session.add(Christiano)
     db.session.add(Parthenia)
-    db.session.add(Mo Salah)
+    db.session.add(MoSalah)
     db.session.add(Javier)
 
     db.session.commit()

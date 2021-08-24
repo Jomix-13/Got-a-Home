@@ -1,7 +1,7 @@
 from app.models import db, Image
 
 
-def images():
+def seed_images():
     image1 = Image(homeId = 1, image = "https://www.google.com/search?q=houses+brentwood+ca&rlz=1C1CHBF_enUS915US916&sxsrf=ALeKk00GM9Mt7tQMY3ppVhT9VEVgxqunAg:1629741062621&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjYmvPI2sfyAhXrJzQIHXNIBWkQ_AUoAXoECAEQAw&biw=1920&bih=937#imgrc=eBt3yxLw6FX0dM")
     image2 = Image(homeId = 2, image = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fap.rdcpix.com%2F1960513237%2F09d1bf99525689daecfb8ebddb93a754l-m0xd-w1020_h770_q80.jpg&imgrefurl=https%3A%2F%2Fwww.realtor.com%2Frealestateandhomes-detail%2F384-Fletcher-Ln_Brentwood_CA_94513_M17121-70538&tbnid=vJXzSpEB30kAlM&vet=12ahUKEwjN_YvK2sfyAhUYgZ4KHf_mA5QQMygBegUIARC9AQ..i&docid=qHAAVOee__uxQM&w=1020&h=677&q=houses%20brentwood%20ca&ved=2ahUKEwjN_YvK2sfyAhUYgZ4KHf_mA5QQMygBegUIARC9AQ")
     image3 = Image(homeId = 3, image = "https://www.google.com/search?q=houses+brentwood+ca&rlz=1C1CHBF_enUS915US916&sxsrf=ALeKk00GM9Mt7tQMY3ppVhT9VEVgxqunAg:1629741062621&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjYmvPI2sfyAhXrJzQIHXNIBWkQ_AUoAXoECAEQAw&biw=1920&bih=937#imgrc=DFYqBTSFeYxqWM")
@@ -103,9 +103,10 @@ def images():
     db.session.add(image48)
     db.session.add(image49)
     db.session.add(image50)
+
     db.session.commit()
 
 
-def undo_media():
+def undo_images():
     db.session.execute('TRUNCATE images RESTART IDENTITY CASCADE;')
     db.session.commit()

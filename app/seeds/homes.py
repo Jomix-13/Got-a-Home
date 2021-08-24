@@ -1,7 +1,7 @@
 from app.models import db, Home
 
 
-def homes():
+def seed_homes():
     home1 = Home(price = 1500000, stAddress = "683 Hamilton ct.", city = "Brentwood", state = "CA", zipcode = 94513, latitude = 37.94605, longitude = -121.68965, lotSize = 3600, beds = 5, bath = 3.5, status = "For sale")
     home2 = Home(price = 1000000, stAddress = "1537 Park Street", city = "Brentwood", state = "CA", zipcode = 94513, latitude = 37.93249, longitude = -121.69218, lotSize = 3200, beds = 4, bath = 2.5, status = "Rent")
     home3 = Home(price = 950000, stAddress = "2054 Park Street", city = "Brentwood", state = "CA", zipcode = 94513, latitude = 37.93249, longitude = -121.69218, lotSize = 3000, beds = 3, bath = 1.5, status = "Sale pending")
@@ -54,6 +54,9 @@ def homes():
     db.session.add(home24)
     db.session.add(home25)
 
-def undo_media():
+    db.session.commit()
+
+
+def undo_homes():
     db.session.execute('TRUNCATE homes RESTART IDENTITY CASCADE;')
     db.session.commit()
