@@ -7,7 +7,7 @@ class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question = db.Column(db.String(500), nullable=False)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    homeId = db.Column(db.Integer, db.ForeignKey('home.id'), nullable=False)
+    homeId = db.Column(db.Integer, db.ForeignKey('homes.id'), nullable=False)
     createdAt = db.Column(db.DateTime, nullable=False, default=db.func.now(), onupdate=db.func.now())
 
     user = db.relationship("User", back_populates="questions")

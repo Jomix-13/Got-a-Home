@@ -20,7 +20,7 @@ class Home(db.Model):
     createdAt = db.Column(db.DateTime, nullable=False, default=db.func.now(), onupdate=db.func.now())
 
     user = db.relationship("User", back_populates="homes")
-    question = db.relationship("Questio", back_populates="homes")
+    question = db.relationship("Question", back_populates="homes")
     image = db.relationship("Image", back_populates="homes")
 
     def to_dict(self):
