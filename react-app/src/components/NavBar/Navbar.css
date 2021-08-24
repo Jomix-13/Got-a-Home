@@ -1,0 +1,26 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(17, 17, 156);
+    align-items: center;
+
+}
+
+.homeButton img{
+    width: 90px;
+    height: auto;
+    margin: 15px 0 15px 0;
+}
+
+.homeButton{
+    margin-left: 50px;
+}
+
+.loggedin, .notloggedin{
+    margin-right: 40px;
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+    align-items: center;
+}
+
