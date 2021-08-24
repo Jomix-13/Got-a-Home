@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
-from .questions import seed_questions, undo_questions
 from .homes import seed_homes, undo_homes
+from .questions import seed_questions, undo_questions
 from .images import seed_images, undo_images
 
 # Creates a seed group to hold our commands
@@ -13,8 +13,8 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
-    seed_questions()
     seed_homes()
+    seed_questions()
     seed_images()
     # Add other seed functions here
 

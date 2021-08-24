@@ -8,19 +8,19 @@ def seed_users():
     John = User(
         username="John", email="John@email.com", password="demo", profilepic="https://media-exp1.licdn.com/dms/image/C4D03AQHrMl3CfenA2w/profile-displayphoto-shrink_200_200/0/1517529181712?e=1632960000&v=beta&t=4JAXxiLdfV1MtX1q61MOXz2rdZYqRfoE37HzX2zlq6E")
     Vero = User(
-        username="Vero", email="Vero@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
+        username="Vero", email="Vero@email.com", password="demo", profilepic="https://thumbs.dreamstime.com/z/female-silhoutte-avatar-default-profile-picture-photo-placeholder-vector-illustration-130555145.jpg")
     David = User(
         username="David", email="David@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
-    youssef = User(
-        username="Youssef", email="Youssef@email.com", password="demo", profilepic="https://media-exp1.licdn.com/dms/image/C4E03AQEMA-yoL7vrDg/profile-displayphoto-shrink_200_200/0/1627330413871?e=1633564800&v=beta&t=c0iEdnzdDJ-pgFe-kW1qbR1IvBo6Akt5q_h4A0alA74")
+    Youssef = User(
+        username="Youssef", email="Youssef@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
     Messi = User(
-        username="Messi", email="Messi@email.com", password="demo", profilepic="https://footballplayerpro.com/wp-content/uploads/2016/10/Lionel-Messi-Profile-Biography.png")
+        username="Messi", email="Messi@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
     Christiano = User(
         username="Christiano", email="Christiano@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
     Parthenia = User(
         username="Parthenia", email="Parthenia@email.com", password="demo", profilepic="https://thumbs.dreamstime.com/z/female-silhoutte-avatar-default-profile-picture-photo-placeholder-vector-illustration-130555145.jpg")
     MoSalah = User(
-        username="Mo Salah", email="MoSalah@email.com", password="demo", profilepic="https://static.wikia.nocookie.net/liverpoolfc/images/6/68/MSalah2020.jpeg")
+        username="MoSalah", email="MoSalah@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
     Javier = User(
         username="Javier", email="Javier@email.com", password="demo", profilepic="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png")
     

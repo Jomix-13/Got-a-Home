@@ -1,5 +1,8 @@
 from .db import db
 
+import datetime
+
+
 
 class Home(db.Model):
     __tablename__ = 'homes'
@@ -17,11 +20,11 @@ class Home(db.Model):
     bath = db.Column(db.Integer, nullable=False)
     status = db.Column(db.String, nullable=False)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'))
-    createdAt = db.Column(db.DateTime, nullable=False, default=db.func.now(), onupdate=db.func.now())
+    createdAt = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow)
 
     user = db.relationship("User", back_populates="homes")
-    question = db.relationship("Question", back_populates="homes")
-    image = db.relationship("Image", back_populates="homes")
+    questions = db.relationship("Question", back_populates="home")
+    images = db.relationship("Image", back_populates="home")
 
     def to_dict(self):
         return{
