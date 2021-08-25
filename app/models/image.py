@@ -13,6 +13,6 @@ class Image(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'imageUrl': self.imageUrl,
+            'image': self.image,
             'homeId': self.homeId,
         }
