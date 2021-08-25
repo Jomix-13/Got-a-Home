@@ -21,7 +21,7 @@ function HomePage() {
             {homes.map((home)=>(
                 <div className='oneHome' key={home.id}>
                     <div>{home.price} $</div>
-                    <div>{home.image}</div>
+                    <img src={home.images[0].image}></img>
                     <div>{home.stAdress}</div>
                     <div>{home.city},{home.state}.{home.zipCode}</div>
                     <div>{home.lotSize} sq ft</div>
