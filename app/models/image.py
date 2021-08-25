@@ -15,4 +15,5 @@ class Image(db.Model):
             'id': self.id,
             'imageUrl': self.imageUrl,
             'homeId': self.homeId,
+            'home': self.home,
         }

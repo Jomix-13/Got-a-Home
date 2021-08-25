@@ -41,5 +41,6 @@ class Home(db.Model):
             'bath': self.bath,
             'status': self.status,
             'userId': self.userId,
-            'createdAt': self.createdAt
+            'createdAt': self.createdAt,
+            'images': self.images
         }
