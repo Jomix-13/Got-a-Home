@@ -1,15 +1,36 @@
+.homepage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+}
+.map{
+    width: 100%;
+}
 .allHomes{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-row: auto;
+    /* grid-row: auto; */
     grid-gap: 25px 5px;
-    border: 1px solid;
+    /* border: 1px solid; */
     border-radius: 15px;
-    padding: 20px;
-    align-items: center;
+    padding: 5px;
+    align-items:center;
+    width: 50%;
+    text-decoration: none;
+
 }
 
 .allHomes img{
+    width: 225px;
+    height: 125px;
+}
+
+.oneHome {
+    border: 1px solid rgb(17, 17, 156);
+    border-radius: 15px;
     width: auto;
-    height: 200px;
+    height: 225px;
+    align-items:center;
+    padding: 5px;
+    text-decoration: none;
 }
