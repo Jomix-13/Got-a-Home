@@ -1,0 +1,93 @@
+/* .form-div {
+  display: flex;
+  justify-content: center;
+}
+
+.form-content {
+  border-radius: 80px;
+  background-color: white;
+  border: 4px solid rgb(255, 255, 255);
+}
+
+.form-h3-container {
+  padding: 30px 0px 5px 0px;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-h3 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-family: "Prompt", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #a50e02;
+}
+
+.form-label {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  font-family: "Prompt", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #a50e02;
+}
+
+.form-input-container {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.form-input {
+  border-radius: 30px;
+  padding: 5px;
+  padding-left: 20px;
+  font-family: "Prompt", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  border: 2px solid #a50e02;
+}
+
+.form-all-inputs-container {
+  padding: 0px 80px 0px 80px;
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  align-items: space-between;
+}
+
+.form-submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  padding: 0px 0px 80px 0px;
+}
+
+.form-btn {
+  font-family: "Prompt", sans-serif;
+  font-weight: bolder;
+  font-size: 17px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  background-color: #a50e02;
+  color: white;
+  padding: 15px 25px;
+  border: 3px solid #a50e02;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.form-input:focus {
+  outline: none;
+} */
