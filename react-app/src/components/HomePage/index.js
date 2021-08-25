@@ -25,7 +25,7 @@ function HomePage() {
                     <div>{home.stAdress}</div>
                     <div>{home.city},{home.state}.{home.zipCode}</div>
                     <div>{home.lotSize} sq ft</div>
-                    <div>Bedrooms:{home.beds}   Bathrooms:{home.bath}</div>
+                    <div>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                     <div>{home.status}</div>
                 </div>
             ))}
