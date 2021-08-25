@@ -58,7 +58,7 @@ const NavBar = () => {
             </div>
         </div> }
       </div>
-      <div class="hwrap"><div class="hmove">
+      <div className="hwrap"><div className="hmove">
         {/* <div class="hitem">
             <NavLink to='/homes' alt=''>Buy</NavLink>
         </div>
@@ -68,7 +68,7 @@ const NavBar = () => {
         <div class="hitem">
             <NavLink to='/homes' alt=''>Sell</NavLink>
         </div> */}
-        <div class="hitem">
+        <div className="hitem">
             <NavLink to='/homes' alt=''>Buy</NavLink>
 
             <NavLink to='/homes' alt=''>Rent</NavLink>
