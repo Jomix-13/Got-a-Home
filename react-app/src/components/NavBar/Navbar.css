@@ -1,0 +1,58 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(17, 17, 156);
+    align-items: center;
+
+}
+
+.homeButton img{
+    width: 90px;
+    height: auto;
+    margin: 15px 0 15px 0;
+}
+
+.homeButton{
+    margin-left: 50px;
+}
+
+.loggedin, .notloggedin{
+    margin-right: 40px;
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+    overflow: hidden; /* HIDE SCROLL BAR */
+    background: #eee;
+  }
+   
+  /* (B) MOVING TICKER WRAPPER */
+  .hmove { display: flex; }
+  
+  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    color: wheat;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+  }
+   
+  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-400%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 30s infinite; }
+  .hmove:hover { animation-play-state: paused; }
