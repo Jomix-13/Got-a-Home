@@ -42,5 +42,6 @@ class Home(db.Model):
             'status': self.status,
             'userId': self.userId,
             'createdAt': self.createdAt,
-            'images': [image.to_dict() for image in self.images]
+            # 'images': [image.to_dict() for image in self.images]
+            'images': [image.to_url() for image in self.images]
         }

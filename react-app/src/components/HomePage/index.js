@@ -11,7 +11,6 @@ import './homepage.css'
 
 function HomePage() {
     const homes = useSelector(state => state.homesReducer.homes)
-    console.log('CCCCCCCCCCC',homes)
     const dispatch = useDispatch()
 
     useEffect(()=>{
@@ -28,7 +27,7 @@ function HomePage() {
                     <NavLink to={`/homes/${home.id}`}>
                     <div className='oneHome' key={home.id}>
                         <div>{home.price} $</div>
-                        <img src={home.images[0].image}></img>
+                        <img src={home.images[0]}></img>
                         <div>{home.stAdress}</div>
                         <div>{home.city},{home.state}.{home.zipCode}</div>
                         <div>{home.lotSize} sq ft</div>
