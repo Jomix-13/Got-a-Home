@@ -1,7 +1,7 @@
 .homepage{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items:center;
+    padding: 0px 10px 0px 5px;
 }
 .map{
     width: 100%;
@@ -15,14 +15,13 @@
     border-radius: 15px;
     padding: 5px;
     align-items:center;
-    width: 50%;
+    width: 100%;
     text-decoration: none;
-
 }
 
 .allHomes img{
-    width: 225px;
-    height: 125px;
+    width: 250px;
+    height: 145px;
 }
 
 .oneHome {
