@@ -43,5 +43,7 @@ class Home(db.Model):
             'userId': self.userId,
             'createdAt': self.createdAt,
             # 'images': [image.to_dict() for image in self.images]
+            'questions': [question.to_qu() for question in self.questions],
             'images': [image.to_url() for image in self.images]
+            # 'questions': [question.to_dict() for question in self.questions]
         }
