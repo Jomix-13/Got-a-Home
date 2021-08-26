@@ -1,3 +1,5 @@
+import { setErrors } from "./errors";
+
 const GET_ALL_HOMES = 'homes/getAllHomes'
 const GET_ONE_HOME = 'homes/getOneHomes'
 const ADD_ONE_HOME = 'homes/addOneHomes'
@@ -49,12 +51,16 @@ export const fetchAddHome = (payload) => async (dispatch) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
     })
-
+    
+    const home = await res.json()
     if(res.ok) {
-        const home = await res.json()
+        // const home = await res.json()
         console.log('ttttttttttt',home)
         dispatch(addOneHome(home))
-    }
+    } else {
+        // const spot = await res.json();
+        dispatch(setErrors(home));
+      }
 }
 
 const intialstate = {

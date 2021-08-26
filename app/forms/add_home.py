@@ -70,5 +70,5 @@ class AddHome(FlaskForm):
     beds = IntegerField('No. Beds', validators=[DataRequired()])
     bath = IntegerField('No. Bath', validators=[DataRequired()])
     status = SelectField('Status', choices=options)
-    Image = TextField('Image', validators=[DataRequired()])
+    # Image = TextField('Image', validators=[DataRequired()])
     

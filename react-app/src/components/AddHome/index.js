@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { Redirect } from "react-router-dom"
+import Errors from '../errors'
+
 
 import { fetchAddHome } from "../../store/home"
 
@@ -63,17 +65,17 @@ const options = ["For Sale","For Rent","Pending Sale"]
 const AddHomeForm = () => {
 
     const [price, setPrice] = useState('')
-    const [stAdress, setStAdress] = useState('')
+    const [stAddress, setStAddress] = useState('')
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
-    const [zibCode, setZibCode] = useState('')
+    const [zipCode, setZipCode] = useState('')
     const [latitude, setLatitude] = useState('')
     const [longitude, setLongitude] = useState('')
     const [lotSize, setLotSize] = useState(STATES[0])
     const [beds, setBeds] = useState('')
     const [bath, setBath] = useState('')
     const [status, setStatus] = useState(options[0])
-    const [image, setImage] = useState('')
+    // const [image, setImage] = useState('')
 
     const dispatch = useDispatch()
 
@@ -81,20 +83,19 @@ const AddHomeForm = () => {
         e.preventDefault()
         const payload = {
             price,
-            stAdress,
+            stAddress,
             city,
             state,
-            zibCode,
+            zipCode,
             latitude,
             longitude,
             lotSize,
             beds,
             bath,
             status,
-            image,
+            // image,
         }
         dispatch(fetchAddHome(payload))
-        Redirect('/')
     }
 
     return (
@@ -112,8 +113,8 @@ const AddHomeForm = () => {
                 <label>Street Address</label>
                 <input
                     type='text'
-                    value={stAdress}
-                    onChange={e=>setStAdress(e.target.value)}
+                    value={stAddress}
+                    onChange={e=>setStAddress(e.target.value)}
                 >
                 </input>
             </div>
@@ -121,8 +122,8 @@ const AddHomeForm = () => {
                 <label>City</label>
                 <input
                     type='text'
-                    value={stAdress}
-                    onChange={e=>setStAdress(e.target.value)}
+                    value={city}
+                    onChange={e=>setCity(e.target.value)}
                 >
                 </input>
             </div>
@@ -145,8 +146,8 @@ const AddHomeForm = () => {
                 <label>Zip Code</label>
                 <input
                     type='number'
-                    value={zibCode}
-                    onChange={e=>setZibCode(e.target.value)}
+                    value={zipCode}
+                    onChange={e=>setZipCode(e.target.value)}
                 >
                 </input>
             </div>
@@ -210,7 +211,7 @@ const AddHomeForm = () => {
                     ))}
                 </select>
             </div>
-            <div>
+            {/* <div>
                 <label>Image</label>
                 <input
                     type='text'
@@ -218,7 +219,7 @@ const AddHomeForm = () => {
                     onChange={e=>setImage(e.target.value)}
                 >
                 </input>
-            </div>
+            </div> */}
             <button type="submit">Submit</button>
         </form>
 
