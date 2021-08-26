@@ -1,8 +1,9 @@
 import { setErrors } from "./errors";
 
 const GET_ALL_HOMES = 'homes/getAllHomes'
-const GET_ONE_HOME = 'homes/getOneHomes'
-const ADD_ONE_HOME = 'homes/addOneHomes'
+const GET_ONE_HOME = 'homes/getOneHome'
+const ADD_ONE_HOME = 'homes/addOneHome'
+const DELETE_ONE_HOME = 'homes/deleteOneHome'
 
 const getAllHomes = (homes) =>{
     return {
@@ -22,6 +23,13 @@ const addOneHome = (home) =>{
     return {
         type : ADD_ONE_HOME,
         home
+    }
+}
+
+const deleteOneHome = (homeid) =>{
+    return {
+        type : DELETE_ONE_HOME,
+        homeid
     }
 }
 
@@ -63,6 +71,21 @@ export const fetchAddHome = (payload) => async (dispatch) => {
       }
 }
 
+export const fetchDeleteHome = (homeid) => async (dispatch) => {
+
+    const res = await fetch(`/api/homes/${homeid}`,{
+        method:'DELETE',
+        headers: { "Content-Type": "application/json" },
+    })
+    
+    const home = await res.json()
+    if(res.ok) {
+        // const home = await res.json()
+        console.log('ttttttttttt',home)
+        dispatch(deleteOneHome(home))
+    } 
+}
+
 const intialstate = {
     homes : [],
     home : {}
@@ -84,6 +107,11 @@ const homesReducer = (state = intialstate,action)=>{
             return {
                 ...state,
                 homes : [action.home, ...state.homes]
+            }
+        case DELETE_ONE_HOME:
+            return {
+                ...state,
+                homes : [...state.homes.filter((home) => home.id !== action.homeid)]
             }
         default:
             return state

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
-import { Redirect } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
 
 
 import { fetchAddHome } from "../../store/home"
 
 const STATES =[
+    "--",
     "AL",
     "AK",
     "AZ",
@@ -59,7 +60,7 @@ const STATES =[
     "WY",
 ]
 
-const options = ["For Sale","For Rent","Pending Sale"]
+const options = ["--","For Sale","For Rent","Pending Sale"]
 
 
 const AddHomeForm = () => {
@@ -75,9 +76,10 @@ const AddHomeForm = () => {
     const [beds, setBeds] = useState('')
     const [bath, setBath] = useState('')
     const [status, setStatus] = useState(options[0])
-    // const [image, setImage] = useState('')
+    const [image, setImage] = useState('')
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -93,9 +95,10 @@ const AddHomeForm = () => {
             beds,
             bath,
             status,
-            // image,
+            image,
         }
         dispatch(fetchAddHome(payload))
+        history.push('/')
     }
 
     return (
@@ -211,7 +214,7 @@ const AddHomeForm = () => {
                     ))}
                 </select>
             </div>
-            {/* <div>
+            <div>
                 <label>Image</label>
                 <input
                     type='text'
@@ -219,7 +222,7 @@ const AddHomeForm = () => {
                     onChange={e=>setImage(e.target.value)}
                 >
                 </input>
-            </div> */}
+            </div>
             <button type="submit">Submit</button>
         </form>
 

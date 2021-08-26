@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
-import {fetchOneHome} from '../../store/home'
+import { Redirect, useHistory, useParams } from "react-router-dom"
+import {fetchOneHome,fetchDeleteHome} from '../../store/home'
 import homesReducer from "../../store/home"
 
 import './onehome.css'
@@ -10,8 +10,10 @@ import './onehome.css'
 const OneHome = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const home = useSelector(state => state.homesReducer.home)
+    const user = useSelector(state => state.session.user)
     console.log('cccccccc',home)
     console.log(id)
 
@@ -19,8 +21,19 @@ const OneHome = () => {
         dispatch(fetchOneHome(id))
     },[dispatch,id])
 
+    const deleteHome = (e,id)=>{
+        e.preventDefault()
+        dispatch(fetchDeleteHome(id))
+        // history.push('/')
+    }
     return (
         <div className='all'>
+            {user?.id === home?.userId ?
+            <div>
+                <button>Modify</button>
+                <button onClick={e=>deleteHome(e,home.id)}>Sold</button>
+            </div>
+             : null }
             <div className='photos'>
                 {home?.images?.map((image)=>(
                     <img src={image}></img>
