@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
+import { Redirect } from "react-router-dom"
 
 import { fetchAddHome } from "../../store/home"
 
@@ -93,6 +94,7 @@ const AddHomeForm = () => {
             image,
         }
         dispatch(fetchAddHome(payload))
+        Redirect('/')
     }
 
     return (
@@ -167,6 +169,24 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
+                <label>No. Beds</label>
+                <input
+                    type='number'
+                    value={beds}
+                    onChange={e=>setBeds(e.target.value)}
+                >
+                </input>
+            </div>
+            <div>
+                <label>No. Bath</label>
+                <input
+                    type='number'
+                    value={bath}
+                    onChange={e=>setBath(e.target.value)}
+                >
+                </input>
+            </div>
+            <div>
                 <label>Lot Size</label>
                 <input
                     type='number'
@@ -175,7 +195,31 @@ const AddHomeForm = () => {
                 >
                 </input>
             </div>
-
+            <div>
+                <label>Status</label>
+                <select
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
+                    >
+                    {options.map(op => (
+                        <option
+                        key={op}
+                        >
+                        {op}
+                    </option>
+                    ))}
+                </select>
+            </div>
+            <div>
+                <label>Image</label>
+                <input
+                    type='text'
+                    value={image}
+                    onChange={e=>setImage(e.target.value)}
+                >
+                </input>
+            </div>
+            <button type="submit">Submit</button>
         </form>
 
     )
