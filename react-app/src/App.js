@@ -8,6 +8,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import HomePage from './components/HomePage';
+import OneHome from './components/OneHome';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -28,20 +29,23 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
+        {/* <Route path='/login' exact={true}>
           <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
+        </Route> */}
+        {/* <Route path='/sign-up' exact={true}>
           <SignUpForm />
-        </Route>
-        <Route path='/users' exact={true} >
+        </Route> */}
+        {/* <Route path='/users' exact={true} >
           <UsersList/>
-        </Route>
-        <Route path='/users/:userId' exact={true} >
+        </Route> */}
+        {/* <Route path='/users/:userId' exact={true} >
           <User />
-        </Route>
+        </Route> */}
         <Route path='/' exact={true} >
           <HomePage></HomePage>
+        </Route>
+        <Route path='/homes/:id'>
+          <OneHome></OneHome>
         </Route>
       </Switch>
     </BrowserRouter>

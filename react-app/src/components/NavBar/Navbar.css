@@ -19,10 +19,13 @@
 .loggedin, .notloggedin{
     margin-right: 40px;
     display: flex;
-    width: 320px;
+    width: 90px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    flex-direction: column;
 }
+
+
 
 /* (A) FIXED WRAPPER */
 .hwrap {

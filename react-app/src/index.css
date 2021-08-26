@@ -47,3 +47,16 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button {
+	background-color: white;
+	/* border: none; */
+	color:rgb(17, 17, 156);
+	/* padding: 20px; */
+	text-align: center;
+	text-decoration: none;
+	/* display: inline-block; */
+	font-size: 16px;
+	margin: 4px 2px;
+	border-radius: 50%;
+	width: 80px;
+  }

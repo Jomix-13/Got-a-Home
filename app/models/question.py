@@ -25,3 +25,6 @@ class Question(db.Model):
             'username': self.user.username,
             'createdAt': self.createdAt
         }
+
+    def to_qu(self):
+        return self.question
