@@ -34,7 +34,7 @@ const OneHome = () => {
                 </div>
                 <div className='descriptions'>
                     <div>
-                        <div className='adress'>{home.stAdress}</div>
+                        <div className='adress'>{home.stAddress}</div>
                     </div>
                     <div>
                         <div className='city'>{home.city},{home.state}.{home.zipCode}</div>

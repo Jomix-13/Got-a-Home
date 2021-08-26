@@ -33,10 +33,10 @@ const NavBar = () => {
             {/* <NavLink to='/login' exact={true} activeClassName='active'>
                 Login
             </NavLink> */}
-            <LoginFormModal></LoginFormModal>
+            <LoginFormModal className='d'></LoginFormModal>
             </div>
             <div>
-                <button onClick={dempButton}>
+                <button className='d' onClick={dempButton}>
                     Demo
                 </button>
             </div>
@@ -44,15 +44,10 @@ const NavBar = () => {
             {/* <NavLink to='/sign-up' exact={true} activeClassName='active'>
                 Sign Up
             </NavLink> */}
-            <SignupFormModal></SignupFormModal>
+            <SignupFormModal className='d'></SignupFormModal>
             </div>
         </div> :
         <div className='loggedin'>
-            <div>
-            <NavLink to='/users' exact={true} activeClassName='active'>
-                Users
-            </NavLink>
-            </div>
             <div>
             <LogoutButton />
             </div>
