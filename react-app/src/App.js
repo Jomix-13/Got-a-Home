@@ -9,6 +9,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import HomePage from './components/HomePage';
 import OneHome from './components/OneHome';
+import AddHomeForm from './components/AddHome';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route path='/homes/:id'>
           <OneHome></OneHome>
+        </Route>
+        <Route path='/sellhomes'>
+          <AddHomeForm></AddHomeForm>
         </Route>
       </Switch>
     </BrowserRouter>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SignUpForm from "./SignUpForm";
 import { Modal } from '../../context/Modal'
+import LoginForm from '../loginModal'
 
 
 
@@ -15,6 +16,7 @@ function SignupFormModal() {
                     setShowModal(false)
                     }}>
                     <SignUpForm />
+                    {/* <LoginForm></LoginForm> */}
                 </Modal>
             )}
         </>
