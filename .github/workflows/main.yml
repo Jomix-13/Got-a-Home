@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v2
     - 
       name: Build and push
-      run: heroku container:push web --app gotahome 
+      run: heroku container:push -a gotahome web
     - 
       name: Release
-      run: heroku container:release web --app gotahome 
+      run: heroku container:release -a gotahome web
