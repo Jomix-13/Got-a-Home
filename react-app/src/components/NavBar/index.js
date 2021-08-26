@@ -64,11 +64,12 @@ const NavBar = () => {
             <NavLink to='/homes' alt=''>Sell</NavLink>
         </div> */}
         <div className="hitem">
-            <NavLink to='/homes' alt=''>Buy</NavLink>
+            <NavLink to='/buyhomes' alt=''>Buy</NavLink>
 
-            <NavLink to='/homes' alt=''>Rent</NavLink>
-
-            <NavLink to='/homes' alt=''>Sell</NavLink>
+            <NavLink to='/renthomes' alt=''>Rent</NavLink>
+            {!user ? null :
+            <NavLink to='/sellhomes' alt=''>Sell</NavLink>
+            }
         </div>
 
         

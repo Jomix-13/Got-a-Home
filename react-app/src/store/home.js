@@ -1,5 +1,6 @@
 const GET_ALL_HOMES = 'homes/getAllHomes'
 const GET_ONE_HOME = 'homes/getOneHomes'
+const ADD_ONE_HOME = 'homes/addOneHomes'
 
 const getAllHomes = (homes) =>{
     return {
@@ -11,6 +12,13 @@ const getAllHomes = (homes) =>{
 const getOneHome = (home) =>{
     return {
         type : GET_ONE_HOME,
+        home
+    }
+}
+
+const addOneHome = (home) =>{
+    return {
+        type : ADD_ONE_HOME,
         home
     }
 }
@@ -34,6 +42,21 @@ export const fetchOneHome = (id) => async (dispatch) => {
     }
 }
 
+export const fetchAddHome = (payload) => async (dispatch) => {
+
+    const res = await fetch(`/api/homes/sell`,{
+        method:'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+    })
+
+    if(res.ok) {
+        const home = await res.json()
+        console.log('ttttttttttt',home)
+        dispatch(addOneHome(home))
+    }
+}
+
 const intialstate = {
     homes : [],
     home : {}
@@ -50,6 +73,11 @@ const homesReducer = (state = intialstate,action)=>{
             return {
                 ...state,
                 home : action.home
+            }
+        case ADD_ONE_HOME:
+            return {
+                ...state,
+                homes : [action.home, ...state.homes]
             }
         default:
             return state
