@@ -167,11 +167,11 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>Longitude</label>
+                <label>Lot Size</label>
                 <input
                     type='number'
-                    value={longitude}
-                    onChange={e=>setLongitude(e.target.value)}
+                    value={lotSize}
+                    onChange={e=>setLotSize(e.target.value)}
                 >
                 </input>
             </div>
