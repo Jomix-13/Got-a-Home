@@ -65,6 +65,9 @@ const options = ["--","For Sale","For Rent","Pending Sale"]
 
 const AddHomeForm = () => {
 
+    const homes = useSelector(state => state.homesReducer.homes)
+    
+
     const [price, setPrice] = useState('')
     const [stAddress, setStAddress] = useState('')
     const [city, setCity] = useState('')
@@ -81,7 +84,7 @@ const AddHomeForm = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const onSubmit = (e) => {
+    const onSubmit = async(e) => {
         e.preventDefault()
         const payload = {
             price,
@@ -97,8 +100,7 @@ const AddHomeForm = () => {
             status,
             image,
         }
-        dispatch(fetchAddHome(payload))
-        history.push('/')
+        await dispatch(fetchAddHome(payload)).then(history.push('/'))
     }
 
     return (

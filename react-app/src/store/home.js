@@ -34,10 +34,10 @@ const deleteOneHome = (homeid) =>{
     }
 }
 
-const editOneHome = (homeid) =>{
+const editOneHome = (home) =>{
     return {
         type : EDIT_ONE_HOME,
-        homeid
+        home
     }
 }
 
@@ -55,7 +55,6 @@ export const fetchOneHome = (id) => async (dispatch) => {
 
     if(res.ok) {
         const home = await res.json()
-        console.log('ttttttttttt',home)
         dispatch(getOneHome(home))
     }
 }
@@ -88,7 +87,6 @@ export const fetchDeleteHome = (homeid) => async (dispatch) => {
     const home = await res.json()
     if(res.ok) {
         // const home = await res.json()
-        console.log('ttttttttttt',home)
         dispatch(deleteOneHome(home))
     } 
 }

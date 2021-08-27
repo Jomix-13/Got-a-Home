@@ -58,7 +58,7 @@ def deletehome(id):
     return "Deleted"
 
 
-@home_routes.route('edit/<int:id>',methods=['GET','PUT'])
+@home_routes.route('edit/<int:id>',methods=['PUT'])
 def edithome(id):
     home = Home.query.get(id)
     form = HomeForm()
@@ -74,8 +74,7 @@ def edithome(id):
         home.lotSize = form.lotSize.data
         home.beds = form.beds.data
         home.bath = form.bath.data
-        home.status = form.states.data
-        form.populate_obj(data)
+        home.status = form.status.data
         db.session.commit()
 
         image = Image()

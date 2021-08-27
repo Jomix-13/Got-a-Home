@@ -100,7 +100,7 @@ const EditHomeForm = () => {
             image,
         }
         dispatch(fetchEditHome(payload,home.id))
-        history.push('/')
+        history.push(`/homes/${home.id}`)
     }
 
     return (
