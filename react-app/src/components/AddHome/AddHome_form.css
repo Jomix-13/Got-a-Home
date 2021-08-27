@@ -1,0 +1,22 @@
+.outside{
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    width: 75%;
+    font-size: large;
+    color: white;
+    background-color: blue;
+    /* padding-bottom: 15px; */
+}
+
+.lab{
+    block-size: 25%;
+    font-size: large;
+    color: blue;
+    background-color: white;
+    border: 3px solid blue;
+    font-size: large;
+
+}

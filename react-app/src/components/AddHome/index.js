@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
+import './AddHome_form.css'
 
 
 import { fetchAddHome } from "../../store/home"
@@ -105,9 +106,11 @@ const AddHomeForm = () => {
 
     return (
         <form onSubmit={onSubmit}>
+            <div  className='outer'>
             <div>
-                <label>Price</label>
+                <label className='lab'>Price</label>
                 <input
+                    className='input'
                     type='text'
                     value={price}
                     onChange={e=>setPrice(e.target.value)}
@@ -115,8 +118,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>Street Address</label>
+                <label className='lab'>Street Address</label>
                 <input
+                    className='input'
                     type='text'
                     value={stAddress}
                     onChange={e=>setStAddress(e.target.value)}
@@ -124,8 +128,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>City</label>
+                <label className='lab'>City</label>
                 <input
+                    className='input'
                     type='text'
                     value={city}
                     onChange={e=>setCity(e.target.value)}
@@ -133,8 +138,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>State</label>
+                <label className='lab'>State</label>
                 <select
+                    className='input'
                     value={state}
                     onChange={(e) => setState(e.target.value)}
                     >
@@ -148,8 +154,9 @@ const AddHomeForm = () => {
                 </select>
             </div>
             <div>
-                <label>Zip Code</label>
+                <label className='lab'>Zip Code</label>
                 <input
+                    className='input'
                     type='number'
                     value={zipCode}
                     onChange={e=>setZipCode(e.target.value)}
@@ -157,8 +164,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>Latitude</label>
+                <label className='lab'>Latitude</label>
                 <input
+                    className='input'
                     type='number'
                     value={latitude}
                     onChange={e=>setLatitude(e.target.value)}
@@ -166,8 +174,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>Longitude</label>
+                <label className='lab'>Longitude</label>
                 <input
+                    className='input'
                     type='number'
                     value={longitude}
                     onChange={e=>setLongitude(e.target.value)}
@@ -175,8 +184,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>No. Beds</label>
+                <label className='lab'>No. Beds</label>
                 <input
+                    className='input'
                     type='number'
                     value={beds}
                     onChange={e=>setBeds(e.target.value)}
@@ -184,8 +194,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>No. Bath</label>
+                <label className='lab'>No. Bath</label>
                 <input
+                    className='input'
                     type='number'
                     value={bath}
                     onChange={e=>setBath(e.target.value)}
@@ -193,8 +204,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>Lot Size</label>
+                <label className='lab'>Lot Size</label>
                 <input
+                    className='input'
                     type='number'
                     value={lotSize}
                     onChange={e=>setLotSize(e.target.value)}
@@ -202,13 +214,14 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <div>
-                <label>Status</label>
+                <label className='lab'>Status</label>
                 <select
+                    classLink='input'
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                     >
                     {options.map(op => (
-                        <option
+                        <option 
                         key={op}
                         >
                         {op}
@@ -217,8 +230,9 @@ const AddHomeForm = () => {
                 </select>
             </div>
             <div>
-                <label>Image</label>
+                <label className='lab'>Image</label>
                 <input
+                    className='input'
                     type='text'
                     value={image}
                     onChange={e=>setImage(e.target.value)}
@@ -226,6 +240,7 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <button type="submit">Submit</button>
+            </div>
         </form>
 
     )

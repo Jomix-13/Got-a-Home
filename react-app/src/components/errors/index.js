@@ -8,9 +8,9 @@ const Errors = () =>{
 
     return(
         <div className='errors-div'>
-            { errors?.map((errors,idx) => (
+            { errors?.map((error,idx) => (
                 <div className="errors" key={idx}>
-                    {errors}
+                    {error}
                 </div>
             ))}
         </div>

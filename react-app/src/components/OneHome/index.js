@@ -40,7 +40,7 @@ const OneHome = () => {
              : null }
             <div className='photos'>
                 {home?.images?.map((image)=>(
-                    <img src={image}></img>
+                    <img key={image.id} src={image}></img>
                 ))}
             </div>
                 <div>
@@ -68,8 +68,8 @@ const OneHome = () => {
                     Questions form
                 </div>
                 <div>
-                {home?.questions?.map((questions)=>(
-                    <div className='qu'>{questions}</div>
+                {home?.questions?.map((question)=>(
+                    <div key={question.id} className='qu'>{question}</div>
                     ))}
                 </div>
             </div>

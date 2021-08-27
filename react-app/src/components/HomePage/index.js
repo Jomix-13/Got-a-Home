@@ -24,8 +24,8 @@ function HomePage() {
             </div>
             <div className='allHomes'>
                 {homes.map((home)=>(
-                    <NavLink to={`/homes/${home.id}`}>
-                    <div className='oneHome' key={home.id}>
+                    <NavLink key={home.id} to={`/homes/${home.id}`}>
+                    <div className='oneHome' >
                         <div>{home.price} $</div>
                         <img src={home.images[0]}></img>
                         <div>{home.stAdress}</div>
