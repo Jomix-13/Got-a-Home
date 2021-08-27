@@ -2,12 +2,12 @@ from app.models import db, Home
 
 
 def seed_homes():
-    home1 = Home(price = 1500000, stAddress = "683 Hamilton ct.", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.94605, longitude = -121.68965, lotSize = 3600, beds = 5, bath = 3.5, status = "For sale",userId='1')
+    home1 = Home(price = 1500000, stAddress = "683 Hamilton ct.", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.94605, longitude = -121.68965, lotSize = 3600, beds = 5, bath = 3.5, status = "For sale",userId='2')
     home2 = Home(price = 1000000, stAddress = "1537 Park Street", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.93249, longitude = -121.69218, lotSize = 3200, beds = 4, bath = 2.5, status = "Rent",userId='2')
-    home3 = Home(price = 950000, stAddress = "2054 Park Street", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.93249, longitude = -121.69218, lotSize = 3000, beds = 3, bath = 1.5, status = "Sale pending",userId='1')
+    home3 = Home(price = 950000, stAddress = "2054 Park Street", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.93249, longitude = -121.69218, lotSize = 3000, beds = 3, bath = 1.5, status = "Sale pending",userId='2')
     home4 = Home(price = 900000, stAddress = "1258 Nelm Street", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.9312285992078, longitude = -121.691996556812, lotSize = 2800, beds = 2, bath = 1, status = "For sale",userId='2')
-    home5 = Home(price = 850000, stAddress = "1505 Alexander Avenue", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 38.006211594551, longitude = -121.859342026557, lotSize = 2600, beds = 4, bath = 2.5, status = "Rent",userId='1')
-    home6 = Home(price = 800000, stAddress = "2700 EAST LELAND ROAD", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 38.0104880312425, longitude = -121.874341810101, lotSize = 2400, beds = 3, bath = 1.5, status = "Sale pending",userId='1')
+    home5 = Home(price = 850000, stAddress = "1505 Alexander Avenue", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 38.006211594551, longitude = -121.859342026557, lotSize = 2600, beds = 4, bath = 2.5, status = "Rent",userId='2')
+    home6 = Home(price = 800000, stAddress = "2700 EAST LELAND ROAD", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 38.0104880312425, longitude = -121.874341810101, lotSize = 2400, beds = 3, bath = 1.5, status = "Sale pending",userId='2')
     home7 = Home(price = 700000, stAddress = "200 Griffith Ln.", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.9294572258095, longitude = -121.70755693297, lotSize = 2000, beds = 4, bath = 2.5, status = "Rent",userId='1')
     home8 = Home(price = 650000, stAddress = "855 Minnesota Ave", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.929660327068, longitude = -121.707814425022, lotSize = 1800, beds = 3, bath = 1.5, status = "Sale pending",userId='1')
     home9 = Home(price = 600000, stAddress = "140 Birch St.	", city = "Brentwood", state = "CA", zipCode = 94513, latitude = 37.9323342719326, longitude = -121.691309940913, lotSize = 1600, beds = 2, bath = 1, status = "For sale",userId='1')

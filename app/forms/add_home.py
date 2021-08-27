@@ -58,7 +58,7 @@ states =[
 
 options = ["For Sale","For Rent","Pending Sale"]
 
-class AddHome(FlaskForm):
+class HomeForm(FlaskForm):
     price = DecimalField('Price', validators=[DataRequired()])
     stAddress = StringField('Street Address', validators=[DataRequired()])
     city = StringField('city', validators=[DataRequired()])

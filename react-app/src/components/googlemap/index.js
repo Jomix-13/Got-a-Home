@@ -14,7 +14,7 @@ function Map () {
         lat: 37.8272,
         lng: -122.2913
         },
-        zoom: 11
+        zoom: 9
     };
 
     return (

@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Redirect, useHistory, useParams } from "react-router-dom"
+import { NavLink, Redirect, useHistory, useParams } from "react-router-dom"
 import {fetchOneHome,fetchDeleteHome} from '../../store/home'
 import homesReducer from "../../store/home"
 
@@ -20,17 +20,21 @@ const OneHome = () => {
     useEffect(()=>{
         dispatch(fetchOneHome(id))
     },[dispatch,id])
-
-    const deleteHome = (e,id)=>{
+    
+    const deleteHome = async(e,id)=>{
         e.preventDefault()
-        dispatch(fetchDeleteHome(id))
-        // history.push('/')
+        await dispatch(fetchDeleteHome(id)).then(history.push('/'))
+        
     }
     return (
         <div className='all'>
             {user?.id === home?.userId ?
             <div>
-                <button>Modify</button>
+                <NavLink to={`/update/${home.id}`} alt="">
+                    <button>
+                        Modify
+                    </button>
+                </NavLink>
                 <button onClick={e=>deleteHome(e,home.id)}>Sold</button>
             </div>
              : null }
