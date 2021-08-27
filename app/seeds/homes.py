@@ -28,6 +28,7 @@ def seed_homes():
     home24 = Home(price = 950000, stAddress = "538 Vineyard Drive", city = "San Francisco", state = "CA", zipCode = 94117, latitude = 37.8040782986359, longitude = -122.410628402489, lotSize = 3000, beds = 4, bath = 2.5, status = "Rent",userId='1')
     home25 = Home(price = 900000, stAddress = "1574 Geneva Street", city = "San Francisco", state = "CA", zipCode = 94117, latitude = 37.7134348967612, longitude = -122.42986562648, lotSize = 2800, beds = 3, bath = 1.5, status = "Sale pending",userId='1')
 
+
     db.session.add(home1)
     db.session.add(home2)
     db.session.add(home3)
