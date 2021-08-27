@@ -101,11 +101,18 @@ const AddHomeForm = () => {
             status,
             image,
         }
-        await dispatch(fetchAddHome(payload)).then(history.push('/'))
+        const success = await dispatch(fetchAddHome(payload))
+        if (success){
+            history.push('/')
+        }
     }
 
     return (
         <form onSubmit={onSubmit}>
+            <dive>
+                Errors
+                <Errors></Errors>
+            </dive>
             <div  className='outer'>
             <div>
                 <label className='lab'>Price</label>
