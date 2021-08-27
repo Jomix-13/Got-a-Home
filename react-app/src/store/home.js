@@ -66,13 +66,12 @@ export const fetchAddHome = (payload) => async (dispatch) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
     })
-    
     const home = await res.json()
+    
     if(res.ok) {
-        // const home = await res.json()
         dispatch(addOneHome(home))
     } else {
-        // const spot = await res.json();
+        // const home = await res.json()
         dispatch(setErrors(home));
       }
 }
@@ -102,14 +101,13 @@ export const fetchEditHome = (payload,id) => async (dispatch) => {
     const home = await res.json()
     
     if(res.ok) {
-        // const home = await res.json()
-        console.log('ttttttttttt',home)
         dispatch(editOneHome(home))
     } else {
-        // const spot = await res.json();
+        // const home = await res.json()
         dispatch(setErrors(home));
-      }
+    }
 }
+
 
 const intialstate = {
     homes : [],

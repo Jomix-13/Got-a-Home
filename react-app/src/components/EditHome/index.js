@@ -83,7 +83,7 @@ const EditHomeForm = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const onSubmit = (e) => {
+    const onSubmit = async(e) => {
         e.preventDefault()
         const payload = {
             price,
@@ -99,42 +99,60 @@ const EditHomeForm = () => {
             status,
             image,
         }
-        dispatch(fetchEditHome(payload,home.id))
-        history.push(`/homes/${home.id}`)
+        // const success = await dispatch(fetchEditHome(payload,home.id))
+        // if (success){
+        //     history.push(`/homes/${home.id}`)
+        // }
+
+        const success = await dispatch(fetchEditHome(payload,home.id))
+        if (success){
+            Redirect(`/homes/${home.id}`)
+        }
     }
 
     return (
+        <div className='form-div'>
         <form onSubmit={onSubmit}>
-            <div>
-                <label>Price</label>
+            <div className='form-content'>
+            <div className='form-all-inputs-container'>
+            <div className='form-h3-container'>
+                {/* <h3 className='form-h3'>Login</h3> */}
+            </div>
+            <div >
+                <Errors></Errors>
+            <div className='form-input-container'>
+                <label className='form-label' >Price</label>
                 <input
-                    type='text'
+                    className='form-input'type='text'
                     value={price}
                     onChange={e=>setPrice(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>Street Address</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Street Address</label>
                 <input
+                    className='form-input'
                     type='text'
                     value={stAddress}
                     onChange={e=>setStAddress(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>City</label>
+            <div className='form-input-container'>
+                <label className='form-label' >City</label>
                 <input
+                    className='form-input'
                     type='text'
                     value={city}
                     onChange={e=>setCity(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>State</label>
+            <div className='form-input-container'>
+                <label className='form-label' >State</label>
                 <select
+                    className='form-input form-select'
                     value={state}
                     onChange={(e) => setState(e.target.value)}
                     >
@@ -147,68 +165,75 @@ const EditHomeForm = () => {
                     ))}
                 </select>
             </div>
-            <div>
-                <label>Zip Code</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Zip Code</label>
                 <input
+                    className='form-input'
                     type='number'
                     value={zipCode}
                     onChange={e=>setZipCode(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>Latitude</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Latitude</label>
                 <input
+                    className='form-input'
                     type='number'
                     value={latitude}
                     onChange={e=>setLatitude(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>Longitude</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Longitude</label>
                 <input
+                    className='form-input'
                     type='number'
                     value={longitude}
                     onChange={e=>setLongitude(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>No. Beds</label>
+            <div className='form-input-container'>
+                <label className='form-label' >No. Beds</label>
                 <input
+                    className='form-input'
                     type='number'
                     value={beds}
                     onChange={e=>setBeds(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>No. Bath</label>
+            <div className='form-input-container'>
+                <label className='form-label' >No. Bath</label>
                 <input
+                    className='form-input'
                     type='number'
                     value={bath}
                     onChange={e=>setBath(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>Lot Size</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Lot Size</label>
                 <input
+                    className='form-input'
                     type='number'
                     value={lotSize}
                     onChange={e=>setLotSize(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label>Status</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Status</label>
                 <select
+                    className='form-input form-select'
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                     >
                     {options.map(op => (
-                        <option
+                        <option 
                         key={op}
                         >
                         {op}
@@ -216,9 +241,10 @@ const EditHomeForm = () => {
                     ))}
                 </select>
             </div>
-            <div>
-                <label>Image</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Image</label>
                 <input
+                    className='form-input'
                     type='text'
                     value={image}
                     onChange={e=>setImage(e.target.value)}
@@ -226,8 +252,11 @@ const EditHomeForm = () => {
                 </input>
             </div>
             <button type="submit">Submit</button>
+            </div>
+        </div>
+        </div>
         </form>
-
+        </div>
     )
 }
 

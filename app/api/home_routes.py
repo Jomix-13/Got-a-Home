@@ -81,6 +81,11 @@ def edithome(id):
         form.populate_obj(image)
         db.session.commit()
         return home.to_dict()
+    errors = form.errors
+    print ('>>>>>>>>>>>>',errors)
+    return jsonify([f'{field.capitalize()}: {error}'
+                for field in errors
+                for error in errors[field]]),400
 
 
 

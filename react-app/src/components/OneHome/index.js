@@ -14,8 +14,6 @@ const OneHome = () => {
 
     const home = useSelector(state => state.homesReducer.home)
     const user = useSelector(state => state.session.user)
-    console.log('cccccccc',home)
-    console.log(id)
 
     useEffect(()=>{
         dispatch(fetchOneHome(id))

@@ -108,46 +108,48 @@ const AddHomeForm = () => {
     }
 
     return (
+        <div className='form-div'>
         <form onSubmit={onSubmit}>
-            <dive>
-                Errors
+            <div className='form-content'>
+            <div className='form-all-inputs-container'>
+            <div className='form-h3-container'>
+                {/* <h3 className='form-h3'>Login</h3> */}
+            </div>
+            <div >
                 <Errors></Errors>
-            </dive>
-            <div  className='outer'>
-            <div>
-                <label className='lab'>Price</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Price</label>
                 <input
-                    className='input'
-                    type='text'
+                    className='form-input'type='text'
                     value={price}
                     onChange={e=>setPrice(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>Street Address</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Street Address</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='text'
                     value={stAddress}
                     onChange={e=>setStAddress(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>City</label>
+            <div className='form-input-container'>
+                <label className='form-label' >City</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='text'
                     value={city}
                     onChange={e=>setCity(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>State</label>
+            <div className='form-input-container'>
+                <label className='form-label' >State</label>
                 <select
-                    className='input'
+                    className='form-input form-select'
                     value={state}
                     onChange={(e) => setState(e.target.value)}
                     >
@@ -160,70 +162,70 @@ const AddHomeForm = () => {
                     ))}
                 </select>
             </div>
-            <div>
-                <label className='lab'>Zip Code</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Zip Code</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='number'
                     value={zipCode}
                     onChange={e=>setZipCode(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>Latitude</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Latitude</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='number'
                     value={latitude}
                     onChange={e=>setLatitude(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>Longitude</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Longitude</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='number'
                     value={longitude}
                     onChange={e=>setLongitude(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>No. Beds</label>
+            <div className='form-input-container'>
+                <label className='form-label' >No. Beds</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='number'
                     value={beds}
                     onChange={e=>setBeds(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>No. Bath</label>
+            <div className='form-input-container'>
+                <label className='form-label' >No. Bath</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='number'
                     value={bath}
                     onChange={e=>setBath(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>Lot Size</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Lot Size</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='number'
                     value={lotSize}
                     onChange={e=>setLotSize(e.target.value)}
                 >
                 </input>
             </div>
-            <div>
-                <label className='lab'>Status</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Status</label>
                 <select
-                    classLink='input'
+                    className='form-input form-select'
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                     >
@@ -236,10 +238,10 @@ const AddHomeForm = () => {
                     ))}
                 </select>
             </div>
-            <div>
-                <label className='lab'>Image</label>
+            <div className='form-input-container'>
+                <label className='form-label' >Image</label>
                 <input
-                    className='input'
+                    className='form-input'
                     type='text'
                     value={image}
                     onChange={e=>setImage(e.target.value)}
@@ -248,8 +250,10 @@ const AddHomeForm = () => {
             </div>
             <button type="submit">Submit</button>
             </div>
+        </div>
+        </div>
         </form>
-
+        </div>
     )
 }
 
