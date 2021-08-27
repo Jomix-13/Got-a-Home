@@ -1,6 +1,10 @@
+import { setErrors } from "./errors";
+
 const GET_ALL_HOMES = 'homes/getAllHomes'
-const GET_ONE_HOME = 'homes/getOneHomes'
-const ADD_ONE_HOME = 'homes/addOneHomes'
+const GET_ONE_HOME = 'homes/getOneHome'
+const ADD_ONE_HOME = 'homes/addOneHome'
+const DELETE_ONE_HOME = 'homes/deleteOneHome'
+const EDIT_ONE_HOME = 'homes/editOneHome'
 
 const getAllHomes = (homes) =>{
     return {
@@ -20,6 +24,20 @@ const addOneHome = (home) =>{
     return {
         type : ADD_ONE_HOME,
         home
+    }
+}
+
+const deleteOneHome = (homeid) =>{
+    return {
+        type : DELETE_ONE_HOME,
+        homeid
+    }
+}
+
+const editOneHome = (homeid) =>{
+    return {
+        type : EDIT_ONE_HOME,
+        homeid
     }
 }
 
@@ -49,12 +67,50 @@ export const fetchAddHome = (payload) => async (dispatch) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
     })
-
+    
+    const home = await res.json()
     if(res.ok) {
-        const home = await res.json()
-        console.log('ttttttttttt',home)
+        // const home = await res.json()
         dispatch(addOneHome(home))
-    }
+    } else {
+        // const spot = await res.json();
+        dispatch(setErrors(home));
+      }
+}
+
+export const fetchDeleteHome = (homeid) => async (dispatch) => {
+
+    const res = await fetch(`/api/homes/${homeid}`,{
+        method:'DELETE',
+        headers: { "Content-Type": "application/json" },
+    })
+    
+    const home = await res.json()
+    if(res.ok) {
+        // const home = await res.json()
+        console.log('ttttttttttt',home)
+        dispatch(deleteOneHome(home))
+    } 
+}
+
+export const fetchEditHome = (payload,id) => async (dispatch) => {
+
+    const res = await fetch(`/api/homes/edit/${id}`,{
+        method:'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+    })
+    
+    const home = await res.json()
+    
+    if(res.ok) {
+        // const home = await res.json()
+        console.log('ttttttttttt',home)
+        dispatch(editOneHome(home))
+    } else {
+        // const spot = await res.json();
+        dispatch(setErrors(home));
+      }
 }
 
 const intialstate = {
@@ -77,7 +133,18 @@ const homesReducer = (state = intialstate,action)=>{
         case ADD_ONE_HOME:
             return {
                 ...state,
-                homes : [action.home, ...state.homes]
+                homes : [...state.homes,action.home]
+            }
+        case DELETE_ONE_HOME:
+            return {
+                ...state,
+                homes : [...state.homes.filter((home) => home.id !== action.homeid)]
+            }
+        case EDIT_ONE_HOME:
+            return {
+                ...state,
+                homes : [...state.homes.filter((home) => home.id !== action.home.id),action.home],
+                home : action.home
             }
         default:
             return state

@@ -58,7 +58,7 @@ states =[
 
 options = ["For Sale","For Rent","Pending Sale"]
 
-class AddHome(FlaskForm):
+class HomeForm(FlaskForm):
     price = DecimalField('Price', validators=[DataRequired()])
     stAddress = StringField('Street Address', validators=[DataRequired()])
     city = StringField('city', validators=[DataRequired()])
@@ -70,5 +70,5 @@ class AddHome(FlaskForm):
     beds = IntegerField('No. Beds', validators=[DataRequired()])
     bath = IntegerField('No. Bath', validators=[DataRequired()])
     status = SelectField('Status', choices=options)
-    Image = TextField('Image', validators=[DataRequired()])
+    image = TextField('Image', validators=[DataRequired()])
     

@@ -4,7 +4,7 @@ import { Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
 
 
-import { fetchAddHome } from "../../store/home"
+import { fetchEditHome } from "../../store/home"
 
 const STATES =[
     "--",
@@ -63,20 +63,22 @@ const STATES =[
 const options = ["--","For Sale","For Rent","Pending Sale"]
 
 
-const AddHomeForm = () => {
+const EditHomeForm = () => {
 
-    const [price, setPrice] = useState('')
-    const [stAddress, setStAddress] = useState('')
-    const [city, setCity] = useState('')
-    const [state, setState] = useState('')
-    const [zipCode, setZipCode] = useState('')
-    const [latitude, setLatitude] = useState('')
-    const [longitude, setLongitude] = useState('')
-    const [lotSize, setLotSize] = useState(STATES[0])
-    const [beds, setBeds] = useState('')
-    const [bath, setBath] = useState('')
-    const [status, setStatus] = useState(options[0])
-    const [image, setImage] = useState('')
+    const home = useSelector(state => state.homesReducer.home)
+
+    const [price, setPrice] = useState(home.price)
+    const [stAddress, setStAddress] = useState(home.stAddress)
+    const [city, setCity] = useState(home.city)
+    const [state, setState] = useState(home.state)
+    const [zipCode, setZipCode] = useState(home.zipCode)
+    const [latitude, setLatitude] = useState(home.latitude)
+    const [longitude, setLongitude] = useState(home.longitude)
+    const [lotSize, setLotSize] = useState(home.lotSize)
+    const [beds, setBeds] = useState(home.beds)
+    const [bath, setBath] = useState(home.bath)
+    const [status, setStatus] = useState(home.status)
+    const [image, setImage] = useState(home.images[0])
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -97,7 +99,7 @@ const AddHomeForm = () => {
             status,
             image,
         }
-        dispatch(fetchAddHome(payload))
+        dispatch(fetchEditHome(payload,home.id))
         history.push('/')
     }
 
@@ -229,4 +231,4 @@ const AddHomeForm = () => {
     )
 }
 
-export default AddHomeForm
+export default EditHomeForm
