@@ -1,3 +1,24 @@
+.outside_signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5px;
+
+  
+  width: 375px;
+  height: 500px;
+  background-color:rgb(17, 17, 156);
+  border-radius: 15%;
+  font-size: 17px;
+  color: white;
+  /* b  order: 4px solid rgb(44, 80, 189) */
+}
+
+.error {
+  color: rgb(236, 94, 94);
+  font-style: italic;
+}
 /* .form-div {
   display: flex;
   justify-content: center;
