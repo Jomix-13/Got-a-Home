@@ -82,8 +82,9 @@ const EditHomeForm = () => {
 
     const dispatch = useDispatch()
     const history = useHistory()
+    const id = home.id
 
-    const onSubmit = async(e) => {
+    const onSubmit = async(e,id) => {
         e.preventDefault()
         const payload = {
             price,
@@ -106,7 +107,7 @@ const EditHomeForm = () => {
 
         const success = await dispatch(fetchEditHome(payload,home.id))
         if (success){
-            Redirect(`/homes/${home.id}`)
+            Redirect(`/homes/${id}`)
         }
     }
 
