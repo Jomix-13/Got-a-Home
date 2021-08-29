@@ -36,7 +36,7 @@ def addhome():
         db.session.add(image)
         db.session.commit()
         print ('>>>>>>>>>>>>',home,',,,,',image)
-        return home.to_dict(),Image.to_dict()
+        return home.to_dict(),image.to_dict()
     errors = form.errors
     print ('>>>>>>>>>>>>',errors)
     return jsonify([f'{field.capitalize()}: {error}'
