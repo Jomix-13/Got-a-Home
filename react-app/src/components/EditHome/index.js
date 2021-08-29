@@ -107,7 +107,7 @@ const EditHomeForm = () => {
 
         const success = await dispatch(fetchEditHome(payload,home.id))
         if (success){
-            Redirect(`/homes/${id}`)
+            history.push(`/homes/${id}`)
         }
     }
 
@@ -252,7 +252,7 @@ const EditHomeForm = () => {
                 >
                 </input>
             </div>
-            <button type="submit">Submit</button>
+            <button className='button' type="submit">Submit</button>
             </div>
         </div>
         </div>

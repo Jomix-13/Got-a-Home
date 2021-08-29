@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import homesReducer from './home'
 import errorsReducer from './errors'
+import questionReducer from './questions'
 
 const rootReducer = combineReducers({
   session,
   homesReducer,
   errorsReducer,
+  questionReducer,
 });
 
 

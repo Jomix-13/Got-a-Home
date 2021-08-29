@@ -129,12 +129,18 @@ const homesReducer = (state = intialstate,action)=>{
         case ADD_ONE_HOME:
             return {
                 ...state,
-                homes : [...state.homes,action.home]
+                homes : [action.home,...state.homes]
             }
         case DELETE_ONE_HOME:
+            // const deleteHome = {
+            //     homes : [...state.homes.filter((home) => home.id !== action.homeid)],
+            //     home : {...state.home}
+            // }
+            // return 
             return {
                 ...state,
-                homes : [...state.homes.filter((home) => home.id !== action.homeid)]
+                 homes : [...state.homes.filter((home) => home.id !== action.homeid)],
+                 home : {...state.home}
             }
         case EDIT_ONE_HOME:
             return {

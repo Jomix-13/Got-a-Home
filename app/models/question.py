@@ -8,7 +8,7 @@ class Question(db.Model):
     __tablename__ = 'questions'
 
     id = db.Column(db.Integer, primary_key=True)
-    question = db.Column(db.String(500), nullable=False)
+    question = db.Column(db.String(100), nullable=False)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     homeId = db.Column(db.Integer, db.ForeignKey('homes.id'), nullable=False)
     createdAt = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow)
@@ -28,3 +28,10 @@ class Question(db.Model):
 
     def to_qu(self):
         return self.question
+
+    def to_quuserid(self):
+        return  {
+            'id': self.id,
+            'question': self.question,
+            'userId': self.userId,
+        }

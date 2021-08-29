@@ -103,8 +103,8 @@ const AddHomeForm = () => {
         }
         const success = await dispatch(fetchAddHome(payload))
         if (success){
-            history.push('/')
         }
+        history.push('/homes')
     }
 
     return (
@@ -248,7 +248,7 @@ const AddHomeForm = () => {
                 >
                 </input>
             </div>
-            <button type="submit">Submit</button>
+            <button className='button' type="submit">Submit</button>
             </div>
         </div>
         </div>
