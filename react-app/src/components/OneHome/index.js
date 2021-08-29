@@ -25,7 +25,7 @@ const OneHome = () => {
     
     const deleteHome = async(e,id)=>{
         e.preventDefault()
-        await dispatch(fetchDeleteHome(id)).then(history.push('/'))
+        await dispatch(fetchDeleteHome(id)).then(history.push('/homes'))
         
     }
     const deleteQu = async(e,questionsid)=>{

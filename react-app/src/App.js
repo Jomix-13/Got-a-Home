@@ -32,26 +32,14 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        {/* <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route> */}
-        {/* <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route> */}
-        {/* <Route path='/users' exact={true} >
-          <UsersList/>
-        </Route> */}
-        {/* <Route path='/users/:userId' exact={true} >
-          <User />
-        </Route> */}
         <Route path='/' exact={true} >
           <SplashPage></SplashPage>
         </Route>
-        <Route path='/homes'>
-        <HomePage></HomePage>
-        </Route>
         <Route path='/homes/:id'>
           <OneHome></OneHome>
+        </Route>
+        <Route path='/homes'>
+          <HomePage></HomePage>
         </Route>
         <Route path='/sellhomes'>
           <AddHomeForm></AddHomeForm>
