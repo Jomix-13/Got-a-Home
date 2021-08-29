@@ -27,6 +27,11 @@ const NavBar = () => {
             <img src='https://i.imgur.com/vZ0TUsl.png' alt=""/>
           </NavLink>
         </div>
+        <div className='io'>
+          <NavLink to='/' exact={true} activeClassName='active'>
+            <img src='https://i.imgur.com/Xc4j024.png'></img>
+          </NavLink>
+        </div>
         {!user ?
         <div className='notloggedin'>
             <div>

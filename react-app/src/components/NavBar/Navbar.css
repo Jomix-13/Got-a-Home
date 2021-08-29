@@ -25,6 +25,10 @@
     flex-direction: column;
 }
 
+.io img{
+  width: 400px;
+  height: 90px;
+}
 
 
 /* (A) FIXED WRAPPER */
