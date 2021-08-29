@@ -9,11 +9,11 @@ home_routes = Blueprint('homes', __name__)
 
 @home_routes.route('/')
 def allhomes():
-    homes = Home.query.all()
+    homes = Home.query.order_by(Home.createdAt.desc()).all()
     return {'homes': [home.to_dict() for home in homes]}
 
 
-@home_routes.route('/<int:id>')
+@home_routes.route('/<int:id>', methods=['GET'])
 def onehome(id):
     home = Home.query.get(id)
     

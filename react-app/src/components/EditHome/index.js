@@ -107,8 +107,8 @@ const EditHomeForm = () => {
 
         const success = await dispatch(fetchEditHome(payload,home.id))
         if (success){
-            history.push(`/homes/${id}`)
         }
+        history.push(`/homes/${id}`)
     }
 
     return (
