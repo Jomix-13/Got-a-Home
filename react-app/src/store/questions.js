@@ -3,6 +3,7 @@ import {setErrors} from './errors'
 const GET_ALL_QUESTIONS = 'questions/getAlQuestions'
 const ADD_ONE_QUESTION = 'questions/addOneQuestion'
 const DELETE_ONE_QUESTION = 'questions/deleteOneQuestion'
+const EDIT_ONE_QUESTION = 'questions/editOneQuestion'
 
 const getAllQuestions = (questions) =>{
     return {
@@ -20,6 +21,12 @@ const deleteOneQuestion = (questionid) =>{
     return {
         type : DELETE_ONE_QUESTION,
         questionid
+    }
+}
+const editOneQuestion = (question) =>{
+    return {
+        type : EDIT_ONE_QUESTION,
+        question
     }
 }
 
@@ -65,8 +72,27 @@ export const fetchDeleteQuestion = (questionid) => async (dispatch) => {
     } 
 }
 
+export const fetchEditQuestion = (payload,id) => async (dispatch) => {
+
+    const res = await fetch(`/api/question/edit/${id}`,{
+        method:'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+    })
+    
+    const question = await res.json()
+    
+    if(res.ok) {
+        dispatch(editOneQuestion(question))
+    } else {
+        // const home = await res.json()
+        dispatch(editOneQuestion(question));
+    }
+}
+
 const intialstate = {
     questions :[],
+    question:{}
 }
 
 const questionReducer = (state = intialstate,action)=>{
@@ -77,10 +103,6 @@ const questionReducer = (state = intialstate,action)=>{
                 ...action.questions
             }
         case ADD_ONE_QUESTION:
-            // return {
-            //     ...state,
-            //     questions : [...state.questions,action.question]
-            // }
             return { 
                 ...state,
                 questions: [...state.questions, action.question]
@@ -90,12 +112,12 @@ const questionReducer = (state = intialstate,action)=>{
                 ...state,
                 questions : [...state.questions.filter((question) => question.id !== action.questionid)]
             }
-        // case EDIT_ONE_HOME:
-        //     return {
-        //         ...state,
-        //         homes : [...state.homes.filter((home) => home.id !== action.home.id),action.home],
-        //         home : action.home
-        //     }
+        case EDIT_ONE_QUESTION:
+            return {
+                ...state,
+                questions : [...state.questions.filter((question) => question.id !== action.question.id),action.question],
+                question : action.question
+            }
         default:
             return state
     }

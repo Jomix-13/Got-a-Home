@@ -11,6 +11,7 @@ import HomePage from './components/HomePage';
 import OneHome from './components/OneHome';
 import AddHomeForm from './components/AddHome';
 import EditHomeForm from './components/EditHome';
+import SplashPage from './components/SplashPage'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -44,7 +45,10 @@ function App() {
           <User />
         </Route> */}
         <Route path='/' exact={true} >
-          <HomePage></HomePage>
+          <SplashPage></SplashPage>
+        </Route>
+        <Route path='/homes'>
+        <HomePage></HomePage>
         </Route>
         <Route path='/homes/:id'>
           <OneHome></OneHome>

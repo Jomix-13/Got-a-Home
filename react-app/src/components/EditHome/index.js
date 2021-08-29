@@ -4,7 +4,7 @@ import { Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
 
 
-import { fetchEditHome } from "../../store/home"
+import { fetchEditHome, fetchOneHome } from "../../store/home"
 
 const STATES =[
     "--",
@@ -108,7 +108,8 @@ const EditHomeForm = () => {
         const success = await dispatch(fetchEditHome(payload,home.id))
         if (success){
         }
-        history.push(`/homes/${id}`)
+        // await fetchOneHome(home.id)
+        history.push(`/homes/${home.id}`)
     }
 
     return (

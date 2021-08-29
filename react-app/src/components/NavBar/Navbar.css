@@ -7,7 +7,7 @@
 }
 
 .homeButton img{
-    width: 90px;
+    width: 150px;
     height: auto;
     margin: 15px 0 15px 0;
 }
@@ -57,5 +57,5 @@
     0% { transform: translate3d(100%, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
   }
-  .hmove { animation: tickerh linear 20s infinite; }
+  .hmove { animation: tickerh linear 30s infinite; }
   .hmove:hover { animation-play-state: paused; }

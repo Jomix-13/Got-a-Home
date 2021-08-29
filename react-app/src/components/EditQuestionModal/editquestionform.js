@@ -1,30 +1,31 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchAddQuestion } from "../../store/questions"
+import { fetchAddQuestion, fetchEditQuestion } from "../../store/questions"
 import Errors from "../errors"
 
-import './questionform.css'
+import './editquestion.css'
 
-const AddQuestionForm = () => {
+const EditQuestionForm = ({ setShowModal }) => {
 
     const home = useSelector(state => state.homesReducer.home)
-    const user = useSelector(state => state.session.user)
+    const qu = useSelector(state => state.questionReducer.question)
 
-    const [question,setQuestion] = useState('')
+
+    const [question,setQuestion] = useState(qu?.question)
 
     const dispatch = useDispatch()
 
-    const onSubmit = async(e) =>{
+    const onSubmit = async(e,id) =>{
         e.preventDefault()
         const payload = {
             question,
             homeId: home.id
         }
-        console.log('COMP 1', payload)
-        const success = await dispatch(fetchAddQuestion(payload))
+        const success = await dispatch(fetchEditQuestion(payload,id))
         if (success){
+            setShowModal(false);
         }
-        setQuestion('')
+        
 
     }
 
@@ -61,4 +62,4 @@ const AddQuestionForm = () => {
     )
 }
 
-export default AddQuestionForm
+export default EditQuestionForm
