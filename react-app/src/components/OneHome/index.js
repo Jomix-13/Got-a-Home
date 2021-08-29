@@ -2,7 +2,8 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink, Redirect, useHistory, useParams } from "react-router-dom"
 import {fetchOneHome,fetchDeleteHome} from '../../store/home'
-import {fetchAllQuestions, fetchDeleteQuestion} from '../../store/questions'
+import {fetchAllQuestions, fetchDeleteQuestion, fetchEditQuestion} from '../../store/questions'
+import EditQuestionFormModal from '../EditQuestionModal'
 import AddQuestionForm from '../AddQuestion'
 
 import './onehome.css'
@@ -24,14 +25,14 @@ const OneHome = () => {
     
     const deleteHome = async(e,id)=>{
         e.preventDefault()
-        await dispatch(fetchDeleteHome(id)).then(history.push('/'))
+        await dispatch(fetchDeleteHome(id)).then(history.push('/homes'))
         
     }
     const deleteQu = async(e,questionsid)=>{
         e.preventDefault()
-        console.log('CCCC',questionsid)
         await dispatch(fetchDeleteQuestion(questionsid))    
     }
+
 
     return (
         <div className='all'>
@@ -74,24 +75,15 @@ const OneHome = () => {
                 <div>
                     <AddQuestionForm></AddQuestionForm>
                 </div>
-                {/* <div>
-                {home?.questions?.map((question)=>(
-                    <div key={question.id} className='qu'>
-                        {question}
-                        {home?.questionswuserid?.map((qu)=>{
-                            return bool(user.id,qu.userId) ?
-                                <div>delete</div>
-                                : null
-                        })}
-                    </div>
-                    ))}
-                </div> */}
                 <div>
                 {home?.questionswuserid?.map((qu)=>(
                     <div key={qu.question.id} className='qu'>
                         {qu.question}
                         {user?.id === qu.userId ?
+                        <>
                             <button className='bb' onClick={e=>deleteQu(e,qu.id)}>delete</button>
+                            <EditQuestionFormModal id={qu.id}/>
+                        </>
                             :null
                         }
                     </div>

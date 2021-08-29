@@ -1,0 +1,50 @@
+
+/* .All{
+    width: 100%;
+    margin: 0;
+} */
+.i img{
+    width: 100%;
+    height: 400px;
+    margin: 0;
+}
+
+
+/* (A) FIXED WRAPPER */
+.hwrap2 {
+    overflow:hidden; /* HIDE SCROLL BAR */
+    background: rgb(17, 17, 156);
+    width: auto;
+    height: 55px;
+  }
+.hwrap2 img{
+    width: auto;
+    height: 55px;
+  }
+   
+  /* (B) MOVING TICKER WRAPPER */
+  .hmove2 { display: flex; }
+  
+  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem2 {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+  }
+   
+  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-300%, 0, 0); }
+  }
+  .hmove2 { animation: tickerh linear 30s infinite; }
+  /* .hmove2:hover { animation-play-state: paused; } */
