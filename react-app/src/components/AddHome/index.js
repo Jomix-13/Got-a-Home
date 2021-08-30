@@ -104,7 +104,7 @@ const AddHomeForm = () => {
         const success = await dispatch(fetchAddHome(payload))
         if (success){
         }
-        history.push('/homes')
+        history.push('/homes')   
     }
 
     return (

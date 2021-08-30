@@ -11,6 +11,7 @@ import './homepage.css'
 
 function HomePage() {
     const homes = useSelector(state => state.homesReducer.homes)
+    console.log(homes)
     const dispatch = useDispatch()
 
     useEffect(()=>{
