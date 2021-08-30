@@ -5,17 +5,16 @@ import Errors from "../errors"
 
 import './editquestion.css'
 
-const EditQuestionForm = ({ setShowModal }) => {
+const EditQuestionForm = ({ setShowModal,id }) => {
 
     const home = useSelector(state => state.homesReducer.home)
     const qu = useSelector(state => state.questionReducer.question)
 
-
     const [question,setQuestion] = useState(qu?.question)
 
-    const dispatch = useDispatch()
 
-    const onSubmit = async(e,id) =>{
+    const dispatch = useDispatch()
+    const onSubmit = async(e) =>{
         e.preventDefault()
         const payload = {
             question,

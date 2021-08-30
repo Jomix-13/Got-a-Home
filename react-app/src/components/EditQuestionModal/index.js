@@ -3,7 +3,7 @@ import EditQuestionForm from "./editquestionform";
 import { Modal } from '../../context/Modal'
 
 
-function EditQuestionFormModal() {
+function EditQuestionFormModal({id}) {
     const [showModal, setShowModal] = useState(false)
 
     return (
@@ -13,7 +13,7 @@ function EditQuestionFormModal() {
                 <Modal onClose={() => {
                     setShowModal(false)
                     }}>
-                    <EditQuestionForm />
+                    <EditQuestionForm id={id}/>
                 </Modal>
             )}
         </>

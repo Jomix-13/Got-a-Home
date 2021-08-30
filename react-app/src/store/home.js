@@ -118,6 +118,7 @@ export const fetchAddHome = (payload) => async (dispatch) => {
     
     if(res.ok) {
         dispatch(addOneHome(home))
+        return home
     } else {
         // const home = await res.json()
         dispatch(setErrors(home));
@@ -150,6 +151,7 @@ export const fetchEditHome = (payload,id) => async (dispatch) => {
     
     if(res.ok) {
         dispatch(editOneHome(home))
+        return home
     } else {
         // const home = await res.json()
         dispatch(setErrors(home));
