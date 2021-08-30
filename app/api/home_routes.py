@@ -15,8 +15,16 @@ def allhomes():
 @home_routes.route('/splash')
 def slashhomes():
     homes20 = Home.query.order_by(Home.createdAt.asc()).limit(20)
-    print('><>>>>>>>>>>>>>',homes20)
     return {'homes': [home.to_dict() for home in homes20]}
+@home_routes.route('/buy')
+def buyhomes():
+    buyhomes = Home.query.filter(Home.status.like("For Sale")).all()
+    print('>>>>>>>>>>',buyhomes)
+    return {'homes': [home.to_dict() for home in buyhomes]}
+@home_routes.route('/rent')
+def renthomes():
+    renthomes = Home.query.filter(Home.status.like("For Rent")).all()
+    return {'homes': [home.to_dict() for home in renthomes]}
 
 
 @home_routes.route('/<int:id>', methods=['GET'])

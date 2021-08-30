@@ -75,7 +75,7 @@ const OneHome = () => {
                 <div>
                     <AddQuestionForm></AddQuestionForm>
                 </div>
-                <div>
+                <div className='allqu'>
                 {home?.questionswuserid?.map((qu)=>(
                     <div key={qu.question.id} className='qu'>
                         {qu.question}

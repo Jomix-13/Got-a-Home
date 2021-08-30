@@ -2,6 +2,8 @@ import { setErrors } from "./errors";
 
 const GET_ALL_HOMES = 'homes/getAllHomes'
 const GET_20_HOMES = 'homes/get20Homes'
+const GET_BUY_HOMES = 'homes/getBuyHomes'
+const GET_RENT_HOMES = 'homes/getRentHomes'
 const GET_ONE_HOME = 'homes/getOneHome'
 const ADD_ONE_HOME = 'homes/addOneHome'
 const DELETE_ONE_HOME = 'homes/deleteOneHome'
@@ -16,6 +18,18 @@ const getAllHomes = (homes) =>{
 const get20Homes = (homes) =>{
     return {
         type : GET_20_HOMES,
+        homes
+    }
+}
+const getBuyHomes = (homes) =>{
+    return {
+        type : GET_BUY_HOMES,
+        homes
+    }
+}
+const getRentHomes = (homes) =>{
+    return {
+        type : GET_RENT_HOMES,
         homes
     }
 }
@@ -64,6 +78,23 @@ export const fetch20Homes = () => async (dispatch) => {
         const homes = await res.json()
         console.log('TT20',homes)
         dispatch(get20Homes(homes))
+    }
+}
+
+export const fetchBuyHomes = () => async (dispatch) => {
+    const res = await fetch('/api/homes/buy')
+
+    if(res.ok) {
+        const homes = await res.json()
+        dispatch(getBuyHomes(homes))
+    }
+}
+export const fetchRentHomes = () => async (dispatch) => {
+    const res = await fetch('/api/homes/rent')
+
+    if(res.ok) {
+        const homes = await res.json()
+        dispatch(getRentHomes(homes))
     }
 }
 
@@ -139,6 +170,16 @@ const homesReducer = (state = intialstate,action)=>{
                 ...action.homes
             }
         case GET_20_HOMES:
+            return { 
+                ...state,
+                ...action.homes
+            }
+        case GET_BUY_HOMES:
+            return { 
+                ...state,
+                ...action.homes
+            }
+        case GET_RENT_HOMES:
             return { 
                 ...state,
                 ...action.homes
