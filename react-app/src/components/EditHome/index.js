@@ -84,7 +84,12 @@ const EditHomeForm = () => {
     const history = useHistory()
     const id = home.id
 
-    const onSubmit = async(e,id) => {
+    useEffect(()=>{
+        dispatch(fetchOneHome(id))
+        // dispatch(fetchAllQuestions())
+    },[dispatch,id])
+    
+    const onSubmit = async(e) => {
         e.preventDefault()
         const payload = {
             price,
@@ -102,10 +107,10 @@ const EditHomeForm = () => {
         }
         // const success = await dispatch(fetchEditHome(payload,home.id))
         // if (success){
-        //     history.push(`/homes/${home.id}`)
-        // }
-
-        const success = await dispatch(fetchEditHome(payload,home.id))
+            //     history.push(`/homes/${home.id}`)
+            // }
+            dispatch(fetchOneHome(home.id))
+            const success = await dispatch(fetchEditHome(payload,home.id))
         if (success){
         }
         // await fetchOneHome(home.id)

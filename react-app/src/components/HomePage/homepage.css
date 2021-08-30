@@ -2,11 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0px 10px 0px 5px;
+    text-decoration: none;
 }
 .map{
     width: 100%;
 }
-.allHomes{
+.aallHomes{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 25px 5px;
@@ -19,7 +20,7 @@
     height: 100vh;
 }
 
-.allHomes img{
+.aallHomes img{
     width: 250px;
     height: 145px;
 }

@@ -54,7 +54,7 @@ const NavBar = () => {
         </div> :
         <div className='loggedin'>
             <div>
-            <LogoutButton />
+            <LogoutButton className='d'/>
             </div>
         </div> }
       </div>

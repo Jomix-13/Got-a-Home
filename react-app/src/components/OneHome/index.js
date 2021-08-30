@@ -39,11 +39,11 @@ const OneHome = () => {
             {user?.id === home?.userId ?
             <div>
                 <NavLink to={`/update/${home.id}`} alt="">
-                    <button>
+                    <button className='button'>
                         Modify
                     </button>
                 </NavLink>
-                <button onClick={e=>deleteHome(e,home.id)}>Sold</button>
+                <button className='button' onClick={e=>deleteHome(e,home.id)}>Sold</button>
             </div>
              : null }
             <div className='photos'>

@@ -20,7 +20,7 @@
   font-style: italic;
 }
 
-.button {
+.ds {
   font-family: "Prompt", sans-serif;
   font-weight: bolder;
   font-size: 17px;
@@ -30,6 +30,7 @@
   color: white;
   padding: 15px 25px;
   border: 3px solid rgb(17, 17, 156);
+  width: 150px;
 }
 /* .form-div {
   display: flex;
