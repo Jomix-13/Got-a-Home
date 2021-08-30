@@ -1,135 +1,160 @@
-# Flask React Project
+<p align='center'>
+  <img src='https://i.imgur.com/vZ0TUsl.png' height='200px'>
+</p>
 
-This is the starter for the Flask React project.
+# got a home?
+got a home? is a short description of the app. It is a fullstack React App made with a Redux state manager and a backend using Python, Flask, SQL-Alchemy, and PostgresSQL and any other technologies. 
 
-## Getting started
+* View the <a href='https://gotahome.herokuapp.com/'>gotahome</a> App Live
 
-1. Clone this repository (only this branch)
+* Reference to the gotahome <a href='https://github.com/Jomix-13/Got-a-Home/wiki'>Wiki Docs</a>
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
+| Table of Contents |
+| ----------------- |
+| 1. [Features](#features) |
+| 2. [Installation](#installation) |
+| 3. [Technical Implementation Details](#technical-implementation-details) |
+| 4. [Future Features](#future-features) |
+| 5. [Contact](#contact) |
+| 6. [Special Thanks](#special-thanks) |
 
-2. Install dependencies
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+## Technologies
+* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=JavaScript&logoColor=333333" /></a>
+* <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/-PostgreSQL-336791?logo=PostgreSQL&logoColor=white" /></a>
+* <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white"></a>
+* <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB"></a>
+* <a href="https://redux.js.org/"><img src="https://img.shields.io/badge/redux-%23593d88.svg?style=flat&logo=redux&logoColor=white"></a>
+* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3" /></a>
+* <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" /></a>
+* <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white" /></a>
+* <a href="https://www.heroku.com/home"><img src="https://img.shields.io/badge/Heroku-430098?style=flat&logo=heroku&logoColor=white" /></a>
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+## Features
 
-   ```bash
-   pipenv shell
-   ```
+### Sign In and Sign Up
+<!-- ![Sign Up](./readme-assets/images/signup.png) -->
+<img alt="unfollow" src="./readme-assets/images/login.png" height=300/>
+<img alt="unfollow" src="./readme-assets/images/signup.png" height=300/>
 
-   ```bash
-   flask db upgrade
-   ```
+### Feed Page
+<div>gotahome feed displays all Homes</div>
+<div>Discover and search for new Homes</div>
+<img alt="unfollow" src="./readme-assets/images/HomePageFeed.png" height=300/>
 
-   ```bash
-   flask seed all
-   ```
+### View Home
+<div>Single Home of name, photos, Questions</div>
+<img alt="unfollow" src="./readme-assets/images/HomePage.png" height=300/>
 
-   ```bash
-   flask run
-   ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+### Add Home
+<div>Add new Home to the database</div>
+<img alt="unfollow" src="./readme-assets/images/AddHome.png" height=300/>
+<div>Edit Existing Home</div>
+<img alt="unfollow" src="./readme-assets/images/EditHome.png" height=300/>
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+### Create, Read, Update, Delete Home Questions
+<div>View Questions
+<img alt="unfollow" src="./readme-assets/images/qs.png" height=300/>
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+<div>Edit and Add Questions in the database</div>
+<img alt="unfollow" src="./readme-assets/images/Addq.png" height=150 width=300/>
+<img alt="unfollow" src="./readme-assets/images/editq.png" height=150 width=300/>
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
 
-## Deploy to Heroku
 
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
+## Installation
+To build/run project locally, please follow these steps:
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
+1. Clone this repository
 
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
+```shell
+git clone https://github.com/{github-handle}/gotahome.git
+```
 
-   ```bash
-   heroku login
-   ```
+2. Install Pipfile dependencies and create the virtual environment
+```shell
+pipenv install
+```
 
-6. Login to the heroku container registry
+2. Install npm dependencies for the `/react-app`
 
-   ```bash
-   heroku container:login
-   ```
+```shell
+cd react-app
+npm install
+```
 
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
+3. In the `/` root directory, create a `.env` based on the `.env.example` with proper settings
 
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
+4. Setup your PostgreSQL user, password and database and ensure it matches your `.env` file
 
-9. Release your docker container to heroku
+5. Before running any flask commands, confirm you are in the pipenv virtual env. If not, run the command:
+```shell
+pipenv shell
+```
 
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
+5. In the root folder, create the database by running in the terminal:
+```shell
+flask db create
+```
 
-10. set up your database
+6. In the root folder, migrate tables to the database by running in the terminal:
+```shell
+flask db migrate
+```
 
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
+7. In the root folder, seed the database by running in the terminal:
+```shell
+flask seed all
+```
 
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
+8. Start the flask backend in the `/` root directory
+```shell
+flask run
+```
 
-12. profit
+9. Start the frontend in the `/react-app` directory
 
-### For M1 Mac users
+```javascript
+npm start
+```
 
-(Replaces **Step 8**)
 
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
+<!-- ## Technical Implementation Details
 
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
+### {Detail 1}
+Description 1
 
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
+Part of code is shown below:
 
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+```python
+print('add code snippet 1 here')
+```
 
-3. Use docker to push the image to the Heroku container registry:
+Description 2
 
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-# Got-a-Home
+```javascript
+print('add code snippet 2 here')
+```
+
+## Future Features
+
+1. __Search__ - search Homes
+
+2. __Add Multiable Images__ - Add more than one photo for home
+ -->
+
+## Contact
+
+### John Wanis
+<a href="https://www.linkedin.com/in/john-wanis-764957138/"><img src="./readme-assets/logos/linkedin-logo.png" height="28" align="middle" /></a>
+<a href="https://github.com/Jomix-13/"><img src="./readme-assets/logos/github-logo.png" height="38" align="middle" /></a>
+
+John.Wanis@yahoo.com
+
+
+## Special Thanks
+* Fellow peers who have given me support and community: [Andrew](https://github.com/andru17urdna), [Lema](https://github.com/lemlooma), [Meagan](https://github.com/meagan13),[Nico](https://github.com/nicopierson), [Owen](https://github.com/owiwamasa) and [Monte](https://github.com/theflaggship)
+* Mentors who have given me their time and effort: [Caleb](https://github.com/CalebAmes)
+
