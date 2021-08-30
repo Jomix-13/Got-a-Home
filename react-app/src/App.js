@@ -12,6 +12,9 @@ import OneHome from './components/OneHome';
 import AddHomeForm from './components/AddHome';
 import EditHomeForm from './components/EditHome';
 import SplashPage from './components/SplashPage'
+import FooterNav from './components/FooterNav';
+import BuyHomes from './components/BuyRentHomes/BuyHomes'
+import RentHomes from './components/BuyRentHomes/RentHomes'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,7 +50,14 @@ function App() {
         <Route path='/update/:id'>
           <EditHomeForm></EditHomeForm>
         </Route>
+        <Route path='/buyhomes'>
+          <BuyHomes></BuyHomes>
+        </Route>
+        <Route path='/renthomes'>
+          <RentHomes></RentHomes>
+        </Route>
       </Switch>
+      <FooterNav />
     </BrowserRouter>
   );
 }
