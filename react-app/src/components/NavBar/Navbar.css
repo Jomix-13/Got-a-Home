@@ -68,10 +68,10 @@
   }
    
   /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
-  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS
   @keyframes tickerh {
     0% { transform: translate3d(100%, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
   }
   .hmove { animation: tickerh linear 30s infinite; }
-  .hmove:hover { animation-play-state: paused; }
+  .hmove:hover { animation-play-state: paused; } */

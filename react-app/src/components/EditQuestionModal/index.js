@@ -8,7 +8,7 @@ function EditQuestionFormModal({id}) {
 
     return (
         <>
-            <button id='login-btn' onClick={() => setShowModal(true)}>Edit</button>
+            <button className='bb' id='login-btn' onClick={() => setShowModal(true)}>Edit</button>
             {showModal && (
                 <Modal onClose={() => {
                     setShowModal(false)
