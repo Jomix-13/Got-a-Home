@@ -84,6 +84,7 @@ export const fetchEditQuestion = (payload,id) => async (dispatch) => {
     
     if(res.ok) {
         dispatch(editOneQuestion(question))
+        return question
     } else {
         // const home = await res.json()
         dispatch(editOneQuestion(question));

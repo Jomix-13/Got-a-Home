@@ -13,7 +13,7 @@ function EditQuestionFormModal({id}) {
                 <Modal onClose={() => {
                     setShowModal(false)
                     }}>
-                    <EditQuestionForm id={id}/>
+                    <EditQuestionForm setShowModal={setShowModal} id={id}/>
                 </Modal>
             )}
         </>

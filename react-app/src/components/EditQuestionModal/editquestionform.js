@@ -5,13 +5,25 @@ import Errors from "../errors"
 
 import './editquestion.css'
 
-const EditQuestionForm = ({ setShowModal,id }) => {
+const EditQuestionForm = ({ setShowModal,id} ) => {
 
     const home = useSelector(state => state.homesReducer.home)
     const qu = useSelector(state => state.questionReducer.question)
 
-    const [question,setQuestion] = useState(qu?.question)
-
+    const qqqq = home.questionswuserid
+    console.log(qqqq)
+    console.log(id)
+    
+    function ww(){
+        return home.questionswuserid.filter((ee)=>{
+            if(ee.id === id){
+                return ee
+            }
+        })
+    }
+    
+    console.log(ww()[0].question)
+    const [question,setQuestion] = useState(ww()[0].question)
 
     const dispatch = useDispatch()
     const onSubmit = async(e) =>{
