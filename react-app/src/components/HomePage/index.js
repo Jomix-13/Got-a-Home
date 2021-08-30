@@ -23,7 +23,7 @@ function HomePage() {
             <div className='map'>
                 <Map></Map>
             </div>
-            <div className='allHomes'>
+            <div className='aallHomes'>
                 {homes.map((home)=>(
                     <NavLink key={home.id} to={`/homes/${home.id}`}>
                     <div className='oneHome' >
