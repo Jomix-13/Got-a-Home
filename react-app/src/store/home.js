@@ -1,6 +1,7 @@
 import { setErrors } from "./errors";
 
 const GET_ALL_HOMES = 'homes/getAllHomes'
+const GET_20_HOMES = 'homes/get20Homes'
 const GET_ONE_HOME = 'homes/getOneHome'
 const ADD_ONE_HOME = 'homes/addOneHome'
 const DELETE_ONE_HOME = 'homes/deleteOneHome'
@@ -9,6 +10,12 @@ const EDIT_ONE_HOME = 'homes/editOneHome'
 const getAllHomes = (homes) =>{
     return {
         type : GET_ALL_HOMES,
+        homes
+    }
+}
+const get20Homes = (homes) =>{
+    return {
+        type : GET_20_HOMES,
         homes
     }
 }
@@ -47,6 +54,16 @@ export const fetchAllHomes = () => async (dispatch) => {
     if(res.ok) {
         const homes = await res.json()
         dispatch(getAllHomes(homes))
+    }
+}
+
+export const fetch20Homes = () => async (dispatch) => {
+    const res = await fetch('/api/homes/splash')
+
+    if(res.ok) {
+        const homes = await res.json()
+        console.log('TT20',homes)
+        dispatch(get20Homes(homes))
     }
 }
 
@@ -117,6 +134,11 @@ const intialstate = {
 const homesReducer = (state = intialstate,action)=>{
     switch(action.type) {
         case GET_ALL_HOMES:
+            return { 
+                ...state,
+                ...action.homes
+            }
+        case GET_20_HOMES:
             return { 
                 ...state,
                 ...action.homes

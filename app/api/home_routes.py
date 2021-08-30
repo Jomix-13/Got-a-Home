@@ -12,6 +12,12 @@ def allhomes():
     homes = Home.query.order_by(Home.createdAt.desc()).all()
     return {'homes': [home.to_dict() for home in homes]}
 
+@home_routes.route('/splash')
+def slashhomes():
+    homes20 = Home.query.order_by(Home.createdAt.asc()).limit(20)
+    print('><>>>>>>>>>>>>>',homes20)
+    return {'homes': [home.to_dict() for home in homes20]}
+
 
 @home_routes.route('/<int:id>', methods=['GET'])
 def onehome(id):
