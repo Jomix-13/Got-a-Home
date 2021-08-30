@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import { login } from '../../store/session';
 import LoginFormModal from '../loginModal'
@@ -14,9 +14,13 @@ const NavBar = () => {
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
 
+    const history = useHistory()
+
     const dempButton = (e) => {
         e.preventDefault();
         dispatch(login('Demo@email.com','demo'));
+        history.push('./homes')
+
     };
 
   return (
