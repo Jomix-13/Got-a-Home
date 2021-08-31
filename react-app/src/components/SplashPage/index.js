@@ -21,8 +21,9 @@ const SplashPage = () =>{
     return (
         <div className='All'>
             <div className='i'>
+                {/* <div className='slo'>Find Home you will Love to live</div> */}
                 {/* <img src='https://i.imgur.com/s44tGsV.png'></img> */}
-                <img src='https://i.imgur.com/Xc4j024.png'></img>
+                {/* <img src='https://i.imgur.com/Xc4j024.png'></img> */}
                 {/* <img src='https://i.imgur.com/vZ0TUsl.png'></img> */}
             </div>
             {/* <div className='container'>

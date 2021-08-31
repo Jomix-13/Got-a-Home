@@ -263,9 +263,9 @@ const EditHomeForm = ({setShowModal}) => {
                 </input>
             </div>
             <button className='button' type="submit">Submit</button>
-            {/* <NavLink to={`/homes/${home.id}`}>
-                <button className='button' >Cancel</button>
-            </NavLink> */}
+            {/* <NavLink to={`/homes/${home.id}`}> */}
+            <button className='button' onClick={()=> {setShowModal(false)}} >Cancel</button>
+            {/* </NavLink> */}
             </div>
         </div>
         </div>
