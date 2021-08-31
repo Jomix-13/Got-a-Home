@@ -13,10 +13,8 @@ got a home? is a short description of the app. It is a fullstack React App made 
 | ----------------- |
 | 1. [Features](#features) |
 | 2. [Installation](#installation) |
-| 3. [Technical Implementation Details](#technical-implementation-details) |
-| 4. [Future Features](#future-features) |
-| 5. [Contact](#contact) |
-| 6. [Special Thanks](#special-thanks) |
+| 3. [Contact](#contact) |
+| 4. [Special Thanks](#special-thanks) |
 
 
 ## Technologies
