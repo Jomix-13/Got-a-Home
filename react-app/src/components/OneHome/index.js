@@ -4,6 +4,7 @@ import { NavLink, Redirect, useHistory, useParams } from "react-router-dom"
 import {fetchOneHome,fetchDeleteHome} from '../../store/home'
 import {fetchAllQuestions, fetchDeleteQuestion, fetchEditQuestion} from '../../store/questions'
 import EditQuestionFormModal from '../EditQuestionModal'
+import EditHomeFormModal from '../EditHome'
 import AddQuestionForm from '../AddQuestion'
 
 import './onehome.css'
@@ -38,11 +39,12 @@ const OneHome = () => {
         <div className='all'>
             {user?.id === home?.userId ?
             <div>
-                <NavLink to={`/update/${home.id}`} alt="">
+                <EditHomeFormModal/>
+                {/* <NavLink to={`/update/${home.id}`} alt="">
                     <button className='button'>
                         Modify
                     </button>
-                </NavLink>
+                </NavLink> */}
                 <button className='button' onClick={e=>deleteHome(e,home.id)}>Sold</button>
             </div>
              : null }
