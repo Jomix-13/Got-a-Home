@@ -30,7 +30,7 @@ def renthomes():
 @home_routes.route('/<int:id>', methods=['GET'])
 def onehome(id):
     home = Home.query.get(id)
-    
+    print(home)
     return home.to_dict()
 
 @home_routes.route('/sell',methods=['POST'])

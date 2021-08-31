@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Redirect, useHistory } from "react-router-dom"
+import { NavLink, useHistory } from "react-router-dom"
 import Errors from '../errors'
 import './AddHome_form.css'
 
@@ -250,6 +250,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <button className='button' type="submit">Submit</button>
+            <NavLink to={`/homes`}>
+                <button className='button' >Cancel</button>
+            </NavLink>
             </div>
         </div>
         </div>

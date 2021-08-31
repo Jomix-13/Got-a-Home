@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Redirect, useHistory } from "react-router-dom"
+import { NavLink, Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
 
 
@@ -66,6 +66,7 @@ const options = ["--","For Sale","For Rent","Pending Sale"]
 const EditHomeForm = () => {
 
     const home = useSelector(state => state.homesReducer.home)
+    
 
     const [price, setPrice] = useState(home.price)
     const [stAddress, setStAddress] = useState(home.stAddress)
@@ -78,7 +79,7 @@ const EditHomeForm = () => {
     const [beds, setBeds] = useState(home?.beds)
     const [bath, setBath] = useState(home?.bath)
     const [status, setStatus] = useState(home?.status)
-    const [image, setImage] = useState(home?.images[0])
+    const [image, setImage] = useState(home?.images)
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -111,6 +112,8 @@ const EditHomeForm = () => {
             // }
         // dispatch(fetchOneHome(home.id))
         const success = await dispatch(fetchEditHome(payload,home.id))
+        console.log('COMP',success)
+
         if (success){
             history.push(`/homes/${home.id}`)
         }
@@ -259,6 +262,9 @@ const EditHomeForm = () => {
                 </input>
             </div>
             <button className='button' type="submit">Submit</button>
+            <NavLink to={`/homes/${home.id}`}>
+                <button className='button' >Cancel</button>
+            </NavLink>
             </div>
         </div>
         </div>
