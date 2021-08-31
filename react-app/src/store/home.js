@@ -103,6 +103,7 @@ export const fetchOneHome = (id) => async (dispatch) => {
 
     if(res.ok) {
         const home = await res.json()
+        console.log('GETHOMETHUNK',home)
         dispatch(getOneHome(home))
     }
 }

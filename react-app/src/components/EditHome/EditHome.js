@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { NavLink, useHistory } from "react-router-dom"
+import { NavLink, Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
-import './AddHome_form.css'
 
 
-import { fetchAddHome } from "../../store/home"
+import { fetchEditHome, fetchOneHome } from "../../store/home"
 
 const STATES =[
     "--",
@@ -61,30 +60,36 @@ const STATES =[
     "WY",
 ]
 
-const options = ["--","For Sale","For Rent","Sale Pending"]
+const options = ["--","For Sale","For Rent","Pending Sale"]
 
 
-const AddHomeForm = () => {
+const EditHomeForm = ({setShowModal}) => {
 
-    const homes = useSelector(state => state.homesReducer.homes)
+    const home = useSelector(state => state.homesReducer.home)
     
 
-    const [price, setPrice] = useState('')
-    const [stAddress, setStAddress] = useState('')
-    const [city, setCity] = useState('')
-    const [state, setState] = useState('')
-    const [zipCode, setZipCode] = useState('')
-    const [latitude, setLatitude] = useState('')
-    const [longitude, setLongitude] = useState('')
-    const [lotSize, setLotSize] = useState(STATES[0])
-    const [beds, setBeds] = useState('')
-    const [bath, setBath] = useState('')
-    const [status, setStatus] = useState(options[0])
-    const [image, setImage] = useState('')
+    const [price, setPrice] = useState(home.price)
+    const [stAddress, setStAddress] = useState(home.stAddress)
+    const [city, setCity] = useState(home?.city)
+    const [state, setState] = useState(home?.state)
+    const [zipCode, setZipCode] = useState(home?.zipCode)
+    const [latitude, setLatitude] = useState(home?.latitude)
+    const [longitude, setLongitude] = useState(home?.longitude)
+    const [lotSize, setLotSize] = useState(home?.lotSize)
+    const [beds, setBeds] = useState(home?.beds)
+    const [bath, setBath] = useState(home?.bath)
+    const [status, setStatus] = useState(home?.status)
+    const [image, setImage] = useState(home?.images)
 
     const dispatch = useDispatch()
     const history = useHistory()
+    const id = home.id
 
+    useEffect(()=>{
+        dispatch(fetchOneHome(id))
+        // dispatch(fetchAllQuestions())
+    },[dispatch,id])
+    
     const onSubmit = async(e) => {
         e.preventDefault()
         const payload = {
@@ -101,11 +106,19 @@ const AddHomeForm = () => {
             status,
             image,
         }
-        const success = await dispatch(fetchAddHome(payload))
-        console.log(success)
+        // const success = await dispatch(fetchEditHome(payload,home.id))
+        // if (success){
+            //     history.push(`/homes/${home.id}`)
+            // }
+        // dispatch(fetchOneHome(home.id))
+        const success = await dispatch(fetchEditHome(payload,home.id))
+        console.log('COMP',success)
+
         if (success){
-            history.push('/homes')
+            // history.push(`/homes/${home.id}`)
+            setShowModal(false);
         }
+        // await fetchOneHome(home.id)
     }
 
     return (
@@ -250,9 +263,9 @@ const AddHomeForm = () => {
                 </input>
             </div>
             <button className='button' type="submit">Submit</button>
-            <NavLink to={`/homes`}>
+            {/* <NavLink to={`/homes/${home.id}`}>
                 <button className='button' >Cancel</button>
-            </NavLink>
+            </NavLink> */}
             </div>
         </div>
         </div>
@@ -261,4 +274,4 @@ const AddHomeForm = () => {
     )
 }
 
-export default AddHomeForm
+export default EditHomeForm
