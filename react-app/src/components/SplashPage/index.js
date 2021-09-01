@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import './splashpage.css'
 import { fetch20Homes } from '../../store/home'
 import { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
 
 import './splashpage.css'
 const SplashPage = () =>{

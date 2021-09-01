@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { NavLink, Redirect, useHistory, useParams } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import {fetchOneHome,fetchDeleteHome} from '../../store/home'
-import {fetchAllQuestions, fetchDeleteQuestion, fetchEditQuestion} from '../../store/questions'
+import {fetchDeleteQuestion} from '../../store/questions'
 import EditQuestionFormModal from '../EditQuestionModal'
 import EditHomeFormModal from '../EditHome'
 import AddQuestionForm from '../AddQuestion'
@@ -50,7 +50,7 @@ const OneHome = () => {
              : null }
             <div className='photos'>
                 {home?.images?.map((image)=>(
-                    <img key={image.id} src={image}></img>
+                    <img key={image} src={image} alt=''></img>
                 ))}
             </div>
                 <div>
@@ -74,12 +74,14 @@ const OneHome = () => {
                     </div>
                 </div>
             <div className='qupa'>
+                {user ?
                 <div>
                     <AddQuestionForm></AddQuestionForm>
                 </div>
+                : null}
                 <div className='allqu'>
                 {home?.questionswuserid?.map((qu)=>(
-                    <div key={qu.question.id} className='qu'>
+                    <div key={qu.id} className='qu'>
                         {qu.question}
                         {user?.id === qu.userId ?
                         <>

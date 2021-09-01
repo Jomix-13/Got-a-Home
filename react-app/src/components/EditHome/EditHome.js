@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { NavLink, Redirect, useHistory } from "react-router-dom"
 import Errors from '../errors'
 
 
@@ -82,7 +81,6 @@ const EditHomeForm = ({setShowModal}) => {
     const [image, setImage] = useState(home?.images)
 
     const dispatch = useDispatch()
-    const history = useHistory()
     const id = home.id
 
     useEffect(()=>{

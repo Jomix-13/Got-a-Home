@@ -8,7 +8,6 @@ import './questionform.css'
 const AddQuestionForm = () => {
 
     const home = useSelector(state => state.homesReducer.home)
-    const user = useSelector(state => state.session.user)
 
     const [question,setQuestion] = useState('')
 
