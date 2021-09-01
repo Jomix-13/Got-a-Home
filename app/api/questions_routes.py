@@ -23,7 +23,6 @@ def addquestion():
         db.session.commit()
         return question.to_dict()
     errors = form.errors
-    print ('>>>>>>>>>>>>',errors)
     return jsonify([f'{field.capitalize()}: {error}'
                 for field in errors
                 for error in errors[field]]),400
@@ -41,6 +40,11 @@ def deletequestion(id):
 def editquestion(id):
     question = Question.query.get(id)
     form=QuestionForm()
+
+    print('XXXXXXXXXXXXXXXXXXXXX')
+    print(question,form)
+    print('XXXXXXXXXXXXXXXXXXXXX')
+    
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         question.question = form.question.data

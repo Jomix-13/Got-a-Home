@@ -10,8 +10,6 @@ const SplashPage = () =>{
 
     const homes20 = useSelector(state => state.homesReducer.homes)
 
-    console.log(homes20)
-
     const dispatch = useDispatch()
 
     useEffect(()=>{

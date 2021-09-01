@@ -11,8 +11,7 @@ const EditQuestionForm = ({ setShowModal,id} ) => {
     const qu = useSelector(state => state.questionReducer.question)
 
     const qqqq = home.questionswuserid
-    console.log(qqqq)
-    console.log(id)
+
     
     function ww(){
         return home.questionswuserid.filter((ee)=>{
@@ -22,7 +21,6 @@ const EditQuestionForm = ({ setShowModal,id} ) => {
         })
     }
     
-    console.log(ww()[0].question)
     const [question,setQuestion] = useState(ww()[0].question)
 
     const dispatch = useDispatch()
@@ -32,7 +30,9 @@ const EditQuestionForm = ({ setShowModal,id} ) => {
             question,
             homeId: home.id
         }
+        console.log('CCCCC',payload)
         const success = await dispatch(fetchEditQuestion(payload,id))
+        console.log('CCCCC',success)
         if (success){
             setShowModal(false);
         }

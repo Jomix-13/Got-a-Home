@@ -76,7 +76,6 @@ export const fetch20Homes = () => async (dispatch) => {
 
     if(res.ok) {
         const homes = await res.json()
-        console.log('TT20',homes)
         dispatch(get20Homes(homes))
     }
 }
@@ -103,7 +102,6 @@ export const fetchOneHome = (id) => async (dispatch) => {
 
     if(res.ok) {
         const home = await res.json()
-        console.log('GETHOMETHUNK',home)
         dispatch(getOneHome(home))
     }
 }
