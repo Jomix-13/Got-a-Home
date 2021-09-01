@@ -30,9 +30,9 @@ const EditQuestionForm = ({ setShowModal,id} ) => {
             question,
             homeId: home.id
         }
-        console.log('CCCCC',payload)
+
         const success = await dispatch(fetchEditQuestion(payload,id))
-        console.log('CCCCC',success)
+
         if (success){
             setShowModal(false);
         }

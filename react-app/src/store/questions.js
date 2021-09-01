@@ -69,7 +69,7 @@ export const fetchDeleteQuestion = (questionid) => async (dispatch) => {
 }
 
 export const fetchEditQuestion = (payload,id) => async (dispatch) => {
-    console.log('TTT',payload)
+
 
     const res = await fetch(`/api/question/edit/${id}`,{
         method:'PUT',
@@ -81,7 +81,6 @@ export const fetchEditQuestion = (payload,id) => async (dispatch) => {
     
     if(res.ok) {
         dispatch(editOneQuestion(question))
-        console.log('TTT',question)
         return question
     } else {
         // const home = await res.json()
