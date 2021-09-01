@@ -75,6 +75,7 @@ def deletehome(id):
 @home_routes.route('edit/<int:id>',methods=['PUT'])
 def edithome(id):
     home = Home.query.get(id)
+    image = Image.query.join(Home).filter(Home.id == Image.homeId).limit(1)
     form = HomeForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():

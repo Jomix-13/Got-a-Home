@@ -1,7 +1,6 @@
-/* .All{
-    width: 100%;
-    margin: 0;
-} */
+.All{
+  min-height: 750px;
+}
 .i {
   display: flex;
   justify-content: center;
@@ -11,7 +10,7 @@
   background-size: 100% 100%;
 
   width: 100%;
-  height: 400px;
+  height: 700px;
 }
 
 .i img{
@@ -45,6 +44,8 @@
   padding: 0;
   border: 0;
 }
+
+
 /* .each {
   width: 100%;
   height: 100%;
