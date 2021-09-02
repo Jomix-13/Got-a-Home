@@ -4,3 +4,13 @@
     height: 100vh;
     width: 100%;
 }
+
+.mapMarker {
+    position: fixed;
+  }
+  
+  .mapMarker img {
+    width: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }

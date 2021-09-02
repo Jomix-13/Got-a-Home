@@ -1,13 +1,21 @@
 
-import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
-
+import { fetchAllHomes } from '../../store/home';
 import './map.css'
+
 
 
 function Map () {
     
-    // const AnyReactComponent = ({ text }) => <div>{text}</div>;
+    const dispatch = useDispatch();
+    const homes = useSelector((state) => state.homesReducer.homes);
+  
+    useEffect(() => {
+      dispatch(fetchAllHomes());
+    }, [dispatch]);
     
     const bayarea = {
         center: {
@@ -17,6 +25,12 @@ function Map () {
         zoom: 9
     };
 
+    const Marker = ({ lat, lng }) => (
+      <div className="mapMarker">
+        <img src="https://i.imgur.com/B9Qsgm7.png" alt =""></img>
+      </div>
+    )
+
     return (
       // Important! Always set the container height explicitly
       <div className='googleMap'>
@@ -25,11 +39,11 @@ function Map () {
           defaultCenter={bayarea.center}
           defaultZoom={bayarea.zoom}
         >
-          {/* <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          /> */}
+                {!!homes && homes?.map(home =>(
+                    <Link key={home.id} to={`/homes/${home.id}`} lat={home.latitude} lng={home.longitude}>
+                        <Marker/>
+                    </Link>
+                ))}
         </GoogleMapReact>
       </div>
     );

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchAddQuestion, fetchEditQuestion } from "../../store/questions"
+import { fetchEditQuestion } from "../../store/questions"
 import Errors from "../errors"
 
 import './editquestion.css'
@@ -8,7 +8,6 @@ import './editquestion.css'
 const EditQuestionForm = ({ setShowModal,id} ) => {
 
     const home = useSelector(state => state.homesReducer.home)
-    const qu = useSelector(state => state.questionReducer.question)
 
     const qqqq = home.questionswuserid
 

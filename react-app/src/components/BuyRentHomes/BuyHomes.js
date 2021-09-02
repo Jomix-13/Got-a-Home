@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchBuyHomes} from '../../store/home'
-import Map from '../googlemap'
 
 import './buyrent.css'
 
@@ -22,7 +21,7 @@ function BuyHomes() {
                 <NavLink key={home.id} to={`/homes/${home.id}`}>
                 <div className='oneHome' >
                     <div>{home.price} $</div>
-                    <img src={home.images[0]}></img>
+                    <img src={home.images[0]} alt=''></img>
                     <div>{home.stAdress}</div>
                     <div>{home.city},{home.state}.{home.zipCode}</div>
                     <div>{home.lotSize} sq ft</div>

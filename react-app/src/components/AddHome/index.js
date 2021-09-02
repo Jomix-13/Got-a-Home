@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
 import { NavLink, useHistory } from "react-router-dom"
 import Errors from '../errors'
 import './AddHome_form.css'
@@ -64,10 +64,7 @@ const STATES =[
 const options = ["--","For Sale","For Rent","Sale Pending"]
 
 
-const AddHomeForm = () => {
-
-    const homes = useSelector(state => state.homesReducer.homes)
-    
+const AddHomeForm = () => {    
 
     const [price, setPrice] = useState('')
     const [stAddress, setStAddress] = useState('')

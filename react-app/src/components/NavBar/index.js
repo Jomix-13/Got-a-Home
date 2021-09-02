@@ -33,7 +33,7 @@ const NavBar = () => {
         </div>
         <div className='io'>
           <NavLink to='/' exact={true} activeClassName='active'>
-            <img src='https://i.imgur.com/Xc4j024.png'></img>
+            <img src='https://i.imgur.com/Xc4j024.png' alt=''></img>
           </NavLink>
         </div>
         {!user ?
