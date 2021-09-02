@@ -23,7 +23,6 @@ def addquestion():
         db.session.commit()
         return question.to_dict()
     errors = form.errors
-    print ('>>>>>>>>>>>>',errors)
     return jsonify([f'{field.capitalize()}: {error}'
                 for field in errors
                 for error in errors[field]]),400
@@ -34,20 +33,19 @@ def deletequestion(id):
     question = Question.query.get(id)
     db.session.delete(question)
     db.session.commit()
-    print('>>>>>>>>>>>>>>>>',question)
     return "Deleted"
 
 @question_routes.route('edit/<int:id>',methods=['PUT'])
 def editquestion(id):
     question = Question.query.get(id)
     form=QuestionForm()
+    print(question,form)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         question.question = form.question.data
         db.session.commit()
         return question.to_dict()
     errors = form.errors
-    print ('>>>>>>>>>>>>',errors)
     return jsonify([f'{field.capitalize()}: {error}'
                 for field in errors
                 for error in errors[field]]),400

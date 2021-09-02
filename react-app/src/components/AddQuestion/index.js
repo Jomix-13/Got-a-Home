@@ -20,7 +20,6 @@ const AddQuestionForm = () => {
             question,
             homeId: home.id
         }
-        console.log('COMP 1', payload)
         const success = await dispatch(fetchAddQuestion(payload))
         if (success){
         }

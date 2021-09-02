@@ -10,7 +10,6 @@ import './buyrent.css'
 
 function BuyHomes() {
     const homes = useSelector(state => state.homesReducer.homes)
-    console.log(homes)
     const dispatch = useDispatch()
 
     useEffect(()=>{

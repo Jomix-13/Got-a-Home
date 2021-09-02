@@ -112,7 +112,6 @@ const EditHomeForm = ({setShowModal}) => {
             // }
         // dispatch(fetchOneHome(home.id))
         const success = await dispatch(fetchEditHome(payload,home.id))
-        console.log('COMP',success)
 
         if (success){
             // history.push(`/homes/${home.id}`)

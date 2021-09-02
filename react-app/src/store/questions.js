@@ -41,7 +41,6 @@ export const fetchAllQuestions = () => async (dispatch) => {
 
 
 export const fetchAddQuestion = (payload) => async (dispatch) => {
-    console.log('THUNK 1', payload)
     const res = await fetch(`/api/question/add`,{
         method:'POST',
         headers: { "Content-Type": "application/json" },
@@ -50,17 +49,14 @@ export const fetchAddQuestion = (payload) => async (dispatch) => {
     const question = await res.json()
     
     if(res.ok) {
-        console.log('THUNK 2', question)
         dispatch(addOneQuestion(question))
     } else {
         // const home = await res.json()
-        console.log('THUNK 3 ERROR')
         dispatch(setErrors(question));
       }
 }
 
 export const fetchDeleteQuestion = (questionid) => async (dispatch) => {
-    console.log('THUNK',questionid)
     const res = await fetch(`/api/question/${questionid}`,{
         method:'DELETE',
         headers: { "Content-Type": "application/json" },
@@ -73,6 +69,7 @@ export const fetchDeleteQuestion = (questionid) => async (dispatch) => {
 }
 
 export const fetchEditQuestion = (payload,id) => async (dispatch) => {
+
 
     const res = await fetch(`/api/question/edit/${id}`,{
         method:'PUT',
@@ -87,7 +84,7 @@ export const fetchEditQuestion = (payload,id) => async (dispatch) => {
         return question
     } else {
         // const home = await res.json()
-        dispatch(editOneQuestion(question));
+        dispatch(setErrors(question));
     }
 }
 

@@ -102,7 +102,6 @@ const AddHomeForm = () => {
             image,
         }
         const success = await dispatch(fetchAddHome(payload))
-        console.log(success)
         if (success){
             history.push('/homes')
         }
