@@ -12,6 +12,7 @@ import './Navbar.css'
 
 const NavBar = () => {
     const user = useSelector(state => state.session.user)
+    console.log(user)
     const dispatch = useDispatch()
 
     const history = useHistory()
@@ -57,6 +58,14 @@ const NavBar = () => {
             </div>
         </div> :
         <div className='loggedin'>
+          <div className='pp'>
+          <div>
+            {user.username}
+          </div>
+          <div>
+            <img src={user.profilepic} alt='' />
+          </div>
+          </div>
             <div>
             <LogoutButton className='d'/>
             </div>
