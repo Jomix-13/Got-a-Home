@@ -58,7 +58,7 @@ got a home? is a short description of the app. It is a fullstack React App made 
 
 <div>Edit and Add Questions in the database</div>
 <img alt="unfollow" src="./readme-assets/images/Addq.png" height=150 width=300/>
-<img alt="unfollow" src="./readme-assets/images/editq.png" height=150 width=300/>
+<img alt="unfollow" src="./readme-assets/images/ditq.png" height=150 width=300/>
 
 
 

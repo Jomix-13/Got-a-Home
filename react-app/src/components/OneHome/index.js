@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useHistory, useParams } from "react-router-dom"
+import { NavLink, useHistory, useParams } from "react-router-dom"
 import {fetchOneHome,fetchDeleteHome} from '../../store/home'
 import {fetchDeleteQuestion} from '../../store/questions'
 import EditQuestionFormModal from '../EditQuestionModal'
@@ -81,10 +81,17 @@ const OneHome = () => {
                 <button className='button' onClick={e=>deleteHome(e,home.id)}>Sold</button>
             </div>
              : null }
+            {/* <div>
+            <div></div>
+            <div className='photos'>
+                <img src={home?.images[0]} alt=''></img>
+            </div>
+            <div></div>
+            </div> */}
             <div className='photos'>
                 {home?.images?.map((image)=>(
                     <img key={image} src={image} alt=''></img>
-                ))}
+                    ))}
             </div>
                 <div>
                     <div className='price'>{home.price} $</div>

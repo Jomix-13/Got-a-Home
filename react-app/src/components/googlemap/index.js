@@ -16,7 +16,6 @@ function Map () {
   const dispatch = useDispatch();
   const homes = useSelector((state) => state.homesReducer.homes);
   
-  Geocode.setLanguage("en");
   useEffect(() => {
     dispatch(fetchAllHomes());
   }, [dispatch]);
@@ -28,23 +27,29 @@ function Map () {
     },
     zoom: 9
   };
-  
-  
-//  const code = (add, city, state, zip) => Geocode.fromAddress(add, city, state, zip).then(
-//     (response) => {
-//       const { lat, lng } = response.results[0].geometry.location;
-//       return { lat, lng }
-//     },
-//     (error) => {
-//       console.error(error);
-//     }
-//     );
-    
+
+  function codeAddress(home) {
+    const address = `${home.stAddreaa}, ${home.city}, ${home.state}`;
+    Geocode( { 'address': address}, function(results, status) {
+      if (status == 'OK') {
+        bayarea.setCenter(results[0].geometry.location);
+        const Marker = 
+          <div className="mapMarker">
+          <img src="https://i.imgur.com/B9Qsgm7.png" alt =""></img>
+          </div>
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+  //right one  
     const Marker = ({ lat, lng }) => (
       <div className="mapMarker">
           <img src="https://i.imgur.com/B9Qsgm7.png" alt =""></img>
         </div>
       )
+
+
     // const Marker = ({ add, city, state, zip }) => (
     //   <div className="mapMarker">
     //     <img src="https://i.imgur.com/B9Qsgm7.png" alt =""></img>
@@ -64,21 +69,14 @@ function Map () {
                         <Marker/>
                     </Link>
                 ))}
+                
                 {/* {!!homes && homes?.map(home =>(
-                    <Link key={home.id} to={`/homes/${home.id}`} lat={code(home.stAddress, home.city, home.state, home.zipCode).lat} lng={code(home.stAddress, home.city, home.state, home.zipCode).lng} >
+                    <Link key={home.id} to={`/homes/${home.id}`} onClick={()=>codeAddress(homes)}>
+                        
                         <Marker/>
                     </Link>
                 ))} */}
-                {/* {!!homes && homes?.map(home =>(
-                    <Link key={home.id} to={`/homes/${home.id}`} 
-                    add={home.stAddress} 
-                    city={home.city}
-                    state={home.state}
-                    zip={home.zipCode}
-                    >
-                        <Marker/>
-                    </Link>
-                ))} */}
+
         </GoogleMapReact>
       </div>
     );
