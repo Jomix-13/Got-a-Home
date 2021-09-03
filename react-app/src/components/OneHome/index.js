@@ -65,7 +65,7 @@ const OneHome = () => {
                         <div className='adress'>{home.stAddress}</div>
                     </div>
                     <div>
-                        <div className='city'>{home.city},{home.state}.{home.zipCode}</div>
+                        <div className='city'>{home.city}, {home.state}. {home.zipCode}</div>
                     </div>
                     <div>
                         <div className='lotSize'>Lot Size : {home.lotSize} sq ft</div>

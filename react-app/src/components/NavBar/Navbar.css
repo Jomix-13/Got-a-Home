@@ -19,10 +19,15 @@
 .loggedin, .notloggedin{
     margin-right: 40px;
     display: flex;
-    width: 90px;
+    width: 400px;
     justify-content: space-between;
     align-items: flex-end;
-    flex-direction: column;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.pointer:hover{
+  cursor: pointer;
 }
 
 .io img{

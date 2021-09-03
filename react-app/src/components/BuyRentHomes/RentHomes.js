@@ -20,10 +20,10 @@ function BuyHomes() {
             {homes.map((home)=>(
                 <NavLink key={home.id} to={`/homes/${home.id}`}>
                 <div className='oneHome2' >
-                    <div>{home.price} $</div>
+                    <div className='pric'>{home.price} $</div>
                     <img src={home.images[0]} alt=''></img>
                     <div>{home.stAdress}</div>
-                    <div>{home.city},{home.state}.{home.zipCode}</div>
+                    <div>{home.city},  {home.state}.   {home.zipCode}</div>
                     <div>{home.lotSize} sq ft</div>
                     <div>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                     <div>{home.status}</div>

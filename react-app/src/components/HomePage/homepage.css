@@ -23,9 +23,11 @@
 .aallHomes img{
     width: 250px;
     height: 145px;
+    border-radius: 5px;
 }
 
 .oneHome {
+    
     border: 1px solid rgb(17, 17, 156);
     border-radius: 15px;
     width: auto;
@@ -43,4 +45,10 @@
 .pri{
     font-weight: bolder;
     font-size: larger;
+    padding-top: 10px;
+}
+
+
+.ho{
+    margin-left: 15px;
 }

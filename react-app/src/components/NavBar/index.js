@@ -42,10 +42,10 @@ const NavBar = () => {
             {/* <NavLink to='/login' exact={true} activeClassName='active'>
                 Login
             </NavLink> */}
-            <LoginFormModal className='d'></LoginFormModal>
+            <LoginFormModal className='d '></LoginFormModal>
             </div>
             <div>
-                <button className='d' onClick={dempButton}>
+                <button className='d pointer' onClick={dempButton}>
                     Demo
                 </button>
             </div>
@@ -58,7 +58,7 @@ const NavBar = () => {
         </div> :
         <div className='loggedin'>
             <div>
-            <LogoutButton className='d'/>
+            <LogoutButton className='d '/>
             </div>
         </div> }
       </div>
