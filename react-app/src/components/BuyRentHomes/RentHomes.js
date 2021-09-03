@@ -19,7 +19,7 @@ function BuyHomes() {
         <div className='allHomes'>
             {homes.map((home)=>(
                 <NavLink key={home.id} to={`/homes/${home.id}`}>
-                <div className='oneHome' >
+                <div className='oneHome2' >
                     <div>{home.price} $</div>
                     <img src={home.images[0]} alt=''></img>
                     <div>{home.stAdress}</div>
