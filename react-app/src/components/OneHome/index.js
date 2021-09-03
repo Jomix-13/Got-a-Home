@@ -53,8 +53,9 @@ const OneHome = () => {
                     <img key={image} src={image} alt=''></img>
                 ))}
             </div>
+            <div className='HomeData'>
                 <div>
-                    <div className='price'>{home.price} $</div>
+                    <div className='price'>$ {home.price}</div>
                 </div>
                 <div>
                     <div className='status'>{home.status}</div>
@@ -72,6 +73,7 @@ const OneHome = () => {
                     <div>
                         <div className='BB'>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                     </div>
+                </div>
                 </div>
             <div className='qupa'>
                 {user ?

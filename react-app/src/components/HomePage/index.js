@@ -25,13 +25,13 @@ function HomePage() {
                 {homes.map((home)=>(
                     <NavLink key={home.id} to={`/homes/${home.id}`}>
                     <div className='oneHome' >
-                        <div>{home.price} $</div>
+                        <div className='pri'>$ {home.price}</div>
                         <img src={home.images[0]} alt=''></img>
-                        <div>{home.stAdress}</div>
-                        <div>{home.city},{home.state}.{home.zipCode}</div>
-                        <div>{home.lotSize} sq ft</div>
-                        <div>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
-                        <div>{home.status}</div>
+                        <div className='adress'>{home.stAdress}</div>
+                        <div className='city'>{home.city},{home.state}.{home.zipCode}</div>
+                        <div className='lotSize'>{home.lotSize} sq ft</div>
+                        <div className='BB'>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
+                        <div className=''>{home.status}</div>
                     </div>
                     </NavLink>
                 ))}
