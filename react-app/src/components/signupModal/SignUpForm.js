@@ -9,6 +9,7 @@ import './signupform.css'
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
+  const [profilepic, setProfilepic] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -21,7 +22,7 @@ const SignUpForm = () => {
       setErrors(['Password :Password do not match'])
     }
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, password, (!profilepic ? 'https://i.imgur.com/s44tGsV.png' : profilepic)));
       if (data) {
         setErrors(data)
       }else{
@@ -36,6 +37,11 @@ const SignUpForm = () => {
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
+  };
+  const updateProfilepic = (e) => {
+
+      setProfilepic(e.target.value);
+    
   };
 
   const updatePassword = (e) => {
@@ -80,6 +86,26 @@ const SignUpForm = () => {
           value={email}
         ></input>
       </div>
+      <div>
+        <label>Profile Picture</label>
+        </div>
+        <div>
+        <input
+          type='text'
+          name='profilepic'
+          onChange={updateProfilepic}
+          value={profilepic}
+        ></input>
+      </div>
+          {/* <div >
+            <label >Profile Picture URL</label>
+            <input
+            type='text'
+            name='profilepic'
+            onChange={(e) => setProfilepic(e.target.value)}
+            value={profilepic}
+          ></input>
+        </div> */}
       <div>
         <label>Password</label>
         </div>
