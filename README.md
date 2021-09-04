@@ -68,7 +68,7 @@ To build/run project locally, please follow these steps:
 1. Clone this repository
 
 ```shell
-git clone https://github.com/{github-handle}/gotahome.git
+https://github.com/Jomix-13/Got-a-Home.git
 ```
 
 2. Install Pipfile dependencies and create the virtual environment
