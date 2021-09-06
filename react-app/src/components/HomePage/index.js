@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchAllHomes} from '../../store/home'
 import Map from '../googlemap'
+import CurrencyFormat from 'react-currency-format';
+
 
 import './homepage.css'
 
@@ -26,10 +28,13 @@ function HomePage() {
                     <NavLink key={home.id} to={`/homes/${home.id}`}>
                     <div className='oneHome' >
                         <div className='ho'>
-                        <div className='pri'>$ {home.price}</div>
+                        <div className='pri'>
+                        <CurrencyFormat value={home.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                            {/* $ {home.price} */}
+                            </div>
                         <img src={home.images[0]} alt=''></img>
-                        <div className='adressh'>{home.stAdress}</div>
-                        <div className='cityh'>{home.city}, {home.state}.  {home.zipCode}</div>
+                        <div className='adressh'>{home.stAddress},</div>
+                        <div className='cityh'>{home.city}, {home.state}  {home.zipCode}</div>
                         <div className='lotSizeh'>{home.lotSize} sq ft</div>
                         <div className='BBh'>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                         <div className='statush'>{home.status}</div>

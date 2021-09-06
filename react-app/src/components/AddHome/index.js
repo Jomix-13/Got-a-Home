@@ -236,7 +236,7 @@ const AddHomeForm = () => {
                 </select>
             </div>
             <div className='form-input-container'>
-                <label className='form-label' >Image</label>
+                <label className='form-label' >Image URL</label>
                 <input
                     className='form-input'
                     type='text'

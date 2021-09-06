@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {fetchBuyHomes} from '../../store/home'
+import CurrencyFormat from 'react-currency-format';
+
 
 import './buyrent.css'
 
@@ -20,10 +22,13 @@ function BuyHomes() {
             {homes.map((home)=>(
                 <NavLink key={home.id} to={`/homes/${home.id}`}>
                 <div className='oneHome2' >
-                    <div className='pric'>$ {home.price}</div>
+                    <div className='pric'>
+                    <CurrencyFormat value={home.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                        {/* $ {home.price} */}
+                        </div>
                     <img src={home.images[0]} alt=''></img>
-                    <div>{home.stAdress}</div>
-                    <div>{home.city},  {home.state}.   {home.zipCode}</div>
+                    <div>{home.stAddress},</div>
+                    <div>{home.city},  {home.state}   {home.zipCode}</div>
                     <div>{home.lotSize} sq ft</div>
                     <div>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                     <div>{home.status}</div>

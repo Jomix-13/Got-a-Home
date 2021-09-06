@@ -39,7 +39,7 @@
 
 .aallHomes a{
     text-decoration: none;
-    color: brown;
+    color: rgb(17, 17, 156);
 }
 
 .pri{
@@ -51,4 +51,11 @@
 
 .ho{
     margin-left: 15px;
+}
+
+.aallHomes :hover{
+    background-color: rgb(17, 17, 156);
+    color: white;
+    border-radius: 15px;
+
 }
