@@ -34,3 +34,8 @@
     padding: 5px;
     text-decoration: none;
 }
+
+.aallHomes :hover{
+    background-color: cornflowerblue;
+    border-radius: 15px;
+}
