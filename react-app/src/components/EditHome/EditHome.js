@@ -79,6 +79,8 @@ const EditHomeForm = ({setShowModal}) => {
     const [bath, setBath] = useState(home?.bath)
     const [status, setStatus] = useState(home?.status)
     const [image, setImage] = useState(home?.images)
+    const [editHomeErrors, setEditHomeErrors] = useState(false);
+
 
     const dispatch = useDispatch()
     const id = home.id
@@ -114,6 +116,8 @@ const EditHomeForm = ({setShowModal}) => {
         if (success){
             // history.push(`/homes/${home.id}`)
             setShowModal(false);
+        }else{
+            setEditHomeErrors(true)
         }
         // await fetchOneHome(home.id)
     }
@@ -127,7 +131,7 @@ const EditHomeForm = ({setShowModal}) => {
                 {/* <h3 className='form-h3'>Login</h3> */}
             </div>
             <div >
-                <Errors></Errors>
+                {editHomeErrors ? <Errors></Errors> : null }
             <div className='form-input-container'>
                 <label className='form-label' >Price</label>
                 <input

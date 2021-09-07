@@ -8,6 +8,8 @@ import './editquestion.css'
 const EditQuestionForm = ({ setShowModal,id} ) => {
 
     const home = useSelector(state => state.homesReducer.home)
+    const [editquestionErrors, setEditQuestionErrors] = useState(false);
+
 
     const qqqq = home.questionswuserid
 
@@ -34,6 +36,8 @@ const EditQuestionForm = ({ setShowModal,id} ) => {
 
         if (success){
             setShowModal(false);
+        }else{
+            setEditQuestionErrors(true)
         }
         
 
@@ -48,7 +52,7 @@ const EditQuestionForm = ({ setShowModal,id} ) => {
                             {/* <h3 className='form-h3'>Login</h3> */}
                         </div>
                         <div >
-                            <Errors></Errors>
+                            {editquestionErrors ? <Errors></Errors> : null }
                             <div className='form-input-container'>
                                 <label className='form-label' >Question</label>
                                 <input

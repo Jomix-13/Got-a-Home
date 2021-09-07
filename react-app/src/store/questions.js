@@ -50,6 +50,7 @@ export const fetchAddQuestion = (payload) => async (dispatch) => {
     
     if(res.ok) {
         dispatch(addOneQuestion(question))
+        return question
     } else {
         // const home = await res.json()
         dispatch(setErrors(question));

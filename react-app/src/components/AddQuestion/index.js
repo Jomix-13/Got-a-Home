@@ -10,6 +10,8 @@ const AddQuestionForm = () => {
     const home = useSelector(state => state.homesReducer.home)
 
     const [question,setQuestion] = useState('')
+    const [questionErrors, setQuestionErrors] = useState(false);
+
 
     const dispatch = useDispatch()
 
@@ -21,8 +23,10 @@ const AddQuestionForm = () => {
         }
         const success = await dispatch(fetchAddQuestion(payload))
         if (success){
+            setQuestion('')
+        }else{
+            setQuestionErrors(true)
         }
-        setQuestion('')
 
     }
 
@@ -35,7 +39,7 @@ const AddQuestionForm = () => {
                             {/* <h3 className='form-h3'>Login</h3> */}
                         </div>
                         <div >
-                            <Errors></Errors>
+                            {questionErrors ? <Errors></Errors> : null }
                             <div className='form-input-container'>
                                 <label className='form-label' >Question</label>
                                 <input
