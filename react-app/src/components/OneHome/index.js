@@ -85,7 +85,8 @@ const OneHome = () => {
                 <div>
                     <AddQuestionForm></AddQuestionForm>
                 </div>
-                : null}
+                : 
+                <div className='Note'>*** Please log in to be able to post a question ***</div>}
                 <div className='allqu'>
                 {home?.questionswuserid?.map((qu)=>(
                     <div key={qu.id} className='qu'>

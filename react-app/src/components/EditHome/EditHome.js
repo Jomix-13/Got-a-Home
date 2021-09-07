@@ -59,7 +59,7 @@ const STATES =[
     "WY",
 ]
 
-const options = ["--","For Sale","For Rent","Pending Sale"]
+const options = ["--","For Sale","For Rent","Sale Pending"]
 
 
 const EditHomeForm = ({setShowModal}) => {

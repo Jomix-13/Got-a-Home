@@ -56,7 +56,7 @@ states =[
     "WY",
 ]
 
-options = ["For Sale","For Rent","Pending Sale"]
+options = ["For Sale","For Rent","Sale Pending"]
 
 class HomeForm(FlaskForm):
     price = IntegerField('Price', [validators.NumberRange(min=100000, max=100000000,message='is more than 100k and less than 100m')])
