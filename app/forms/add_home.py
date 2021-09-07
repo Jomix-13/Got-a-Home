@@ -72,3 +72,4 @@ class HomeForm(FlaskForm):
     status = SelectField('Status', choices=options)
     image = TextField('Image', [validators.URL(require_tld=False, message=None)])
     
+    
