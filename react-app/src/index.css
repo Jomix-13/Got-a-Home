@@ -49,4 +49,6 @@ table {
 	border-spacing: 0;
 }
 
-  
+div {
+	font-family: Kurale !important;
+}

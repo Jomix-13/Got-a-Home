@@ -6,6 +6,8 @@ import {fetchDeleteQuestion} from '../../store/questions'
 import EditQuestionFormModal from '../EditQuestionModal'
 import EditHomeFormModal from '../EditHome'
 import AddQuestionForm from '../AddQuestion'
+import CurrencyFormat from 'react-currency-format';
+
 
 import './onehome.css'
 
@@ -93,18 +95,22 @@ const OneHome = () => {
                     <img key={image} src={image} alt=''></img>
                     ))}
             </div>
+            <div className='HomeData'>
                 <div>
-                    <div className='price'>{home.price} $</div>
+                    <div className='price'>
+                    <CurrencyFormat value={home.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                        {/* $ {home.price} */}
+                        </div>
                 </div>
                 <div>
                     <div className='status'>{home.status}</div>
                 </div>
                 <div className='descriptions'>
                     <div>
-                        <div className='adress'>{home.stAddress}</div>
+                        <div className='adress'>{home.stAddress},</div>
                     </div>
                     <div>
-                        <div className='city'>{home.city},{home.state}.{home.zipCode}</div>
+                        <div className='city'>{home.city}, {home.state} {home.zipCode}</div>
                     </div>
                     <div>
                         <div className='lotSize'>Lot Size : {home.lotSize} sq ft</div>
@@ -113,16 +119,19 @@ const OneHome = () => {
                         <div className='BB'>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                     </div>
                 </div>
+
                 <div>
                 <button className='button' onClick={()=>Previous(homes,home.id)}>Previous</button>
                 <button className='button' onClick={()=>Next(homes,home.id)}>Next</button>
+
                 </div>
             <div className='qupa'>
                 {user ?
                 <div>
                     <AddQuestionForm></AddQuestionForm>
                 </div>
-                : null}
+                : 
+                <div className='Note'>*** Please log in to be able to post a question ***</div>}
                 <div className='allqu'>
                 {home?.questionswuserid?.map((qu)=>(
                     <div key={qu.id} className='qu'>

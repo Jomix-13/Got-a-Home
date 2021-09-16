@@ -4,6 +4,9 @@
     flex-direction: column;
     align-items: center;
 
+/* .HomeData{
+    border-bottom: 1px black solid;
+} */
 
 }
 .photos{
@@ -16,11 +19,11 @@
     height: 500px;
 }
 .price{
-
     align-items:center;
     justify-items: center;
     font-size: 50px;
 }
+
 .status{
     font-size: 35px;
 }
@@ -79,7 +82,45 @@
     height: 20px;
 }
 
+
 .onerow{
     display:flex;
     flex-direction: row;
+
+.HomeData{
+    border-bottom:5px black solid;
+}
+
+.price{
+    margin-bottom: 5px;
+}
+.status{
+    margin-bottom: 5px;
+}
+.descriptions{
+    margin-bottom: 5px;
+}
+.adress{
+    margin-bottom: 5px;
+}
+
+.city{
+    margin-bottom: 5px;
+}
+
+.lotSize{
+    margin-bottom: 5px;
+    color: grey;
+}
+
+.BB{
+    margin-bottom: 5px;
+    color: grey;
+
+}
+
+.Note{
+    color: red;
+    padding-top: 5px;
+
 }

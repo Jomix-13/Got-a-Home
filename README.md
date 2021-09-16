@@ -58,7 +58,9 @@ got a home? is a short description of the app. It is a fullstack React App made 
 
 <div>Edit and Add Questions in the database</div>
 <img alt="unfollow" src="./readme-assets/images/Addq.png" height=150 width=300/>
-<img alt="unfollow" src="./readme-assets/images/ditq.png" height=150 width=300/>
+
+<img alt="unfollow" src="./readme-assets/images/Editq.png" height=150 width=300/>
+
 
 
 
@@ -68,7 +70,7 @@ To build/run project locally, please follow these steps:
 1. Clone this repository
 
 ```shell
-git clone https://github.com/{github-handle}/gotahome.git
+https://github.com/Jomix-13/Got-a-Home.git
 ```
 
 2. Install Pipfile dependencies and create the virtual environment
@@ -94,7 +96,7 @@ pipenv shell
 
 5. In the root folder, create the database by running in the terminal:
 ```shell
-flask db create
+flask db init
 ```
 
 6. In the root folder, migrate tables to the database by running in the terminal:
