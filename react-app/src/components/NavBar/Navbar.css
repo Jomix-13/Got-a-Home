@@ -21,8 +21,10 @@
     display: flex;
     width: 400px;
     justify-content: space-between;
-    align-items: flex-end;
+
+    align-items: flex-start;
     flex-direction: row;
+
     cursor: pointer;
 }
 
@@ -46,6 +48,29 @@
   padding: 15px 25px;
   border: 3px solid rgb(17, 17, 156);
 }
+
+.pp{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.pp img{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-radius: 700px;
+  height: 60px;
+  width: 60px;
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+}
+ 
 
 
 /* (A) FIXED WRAPPER */
@@ -76,6 +101,7 @@
     text-decoration: none;
   }
    
+
   /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
   /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS
   @keyframes tickerh {

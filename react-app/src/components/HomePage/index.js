@@ -33,6 +33,7 @@ function HomePage() {
                             {/* $ {home.price} */}
                             </div>
                         <img src={home.images[0]} alt=''></img>
+
                         <div className='adressh'>{home.stAddress},</div>
                         <div className='cityh'>{home.city}, {home.state}  {home.zipCode}</div>
                         <div className='lotSizeh'>{home.lotSize} sq ft</div>

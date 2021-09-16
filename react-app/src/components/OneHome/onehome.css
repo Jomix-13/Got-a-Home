@@ -82,6 +82,11 @@
     height: 20px;
 }
 
+
+.onerow{
+    display:flex;
+    flex-direction: row;
+
 .HomeData{
     border-bottom:5px black solid;
 }
@@ -117,4 +122,5 @@
 .Note{
     color: red;
     padding-top: 5px;
+
 }
