@@ -21,8 +21,15 @@
     display: flex;
     width: 400px;
     justify-content: space-between;
+
     align-items: flex-start;
     flex-direction: row;
+
+    cursor: pointer;
+}
+
+.pointer:hover{
+  cursor: pointer;
 }
 
 .io img{
@@ -90,6 +97,10 @@
     font-weight: bold;
   }
 
+  .hitem a{
+    text-decoration: none;
+  }
+   
 
   /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
   /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS

@@ -78,6 +78,8 @@ const AddHomeForm = () => {
     const [bath, setBath] = useState('')
     const [status, setStatus] = useState(options[0])
     const [image, setImage] = useState('')
+    const [homeErrors, setHomeErrors] = useState(false);
+
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -101,6 +103,8 @@ const AddHomeForm = () => {
         const success = await dispatch(fetchAddHome(payload))
         if (success){
             history.push('/homes')
+        }else{
+            setHomeErrors(true)
         }
     }
 
@@ -113,7 +117,7 @@ const AddHomeForm = () => {
                 {/* <h3 className='form-h3'>Login</h3> */}
             </div>
             <div >
-                <Errors></Errors>
+                {homeErrors ? <Errors></Errors> : null }
             <div className='form-input-container'>
                 <label className='form-label' >Price</label>
                 <input
@@ -236,7 +240,7 @@ const AddHomeForm = () => {
                 </select>
             </div>
             <div className='form-input-container'>
-                <label className='form-label' >Image</label>
+                <label className='form-label' >Image URL</label>
                 <input
                     className='form-input'
                     type='text'
