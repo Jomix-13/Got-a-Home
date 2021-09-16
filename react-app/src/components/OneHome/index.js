@@ -148,6 +148,7 @@ const OneHome = () => {
                 </div>
             </div>
         </div>
+        </div>
 
     )
 }
