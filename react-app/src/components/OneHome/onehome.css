@@ -86,6 +86,7 @@
 .onerow{
     display:flex;
     flex-direction: row;
+}
 
 .HomeData{
     border-bottom:5px black solid;
