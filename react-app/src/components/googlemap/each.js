@@ -10,7 +10,7 @@ import './map.css'
 
 
 
-function Map () {
+function Each () {
 
   
   const dispatch = useDispatch();
@@ -53,4 +53,4 @@ function Map () {
   
 }
 
-export default Map;
+export default Each;

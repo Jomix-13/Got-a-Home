@@ -3,9 +3,14 @@ import { useDispatch } from "react-redux"
 import { NavLink, useHistory } from "react-router-dom"
 import Errors from '../errors'
 import './AddHome_form.css'
+import Geocode from "react-geocode";
+
 
 
 import { fetchAddHome } from "../../store/home"
+
+Geocode.setApiKey("AIzaSyAgdlEtqn59K7XpcMGDwsM1Ub8IlhtSruw");
+
 
 const STATES =[
     "--",
@@ -71,8 +76,8 @@ const AddHomeForm = () => {
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
     const [zipCode, setZipCode] = useState('')
-    const [latitude, setLatitude] = useState('')
-    const [longitude, setLongitude] = useState('')
+    // const [latitude, setLatitude] = useState('')
+    // const [longitude, setLongitude] = useState('')
     const [lotSize, setLotSize] = useState(STATES[0])
     const [beds, setBeds] = useState('')
     const [bath, setBath] = useState('')
@@ -86,6 +91,12 @@ const AddHomeForm = () => {
 
     const onSubmit = async(e) => {
         e.preventDefault()
+        let address= (stAddress + ' ' + city + ' '  + state + ' ' + zipCode)
+        let res = await Geocode.fromAddress(address);
+        console.log(res)
+        console.log(res.results[0].geometry.location)
+        const { lat: latitude, lng: longitude } = res.results[0].geometry.location;
+
         const payload = {
             price,
             stAddress,
@@ -173,7 +184,7 @@ const AddHomeForm = () => {
                 >
                 </input>
             </div>
-            <div className='form-input-container'>
+            {/* <div className='form-input-container'>
                 <label className='form-label' >Latitude</label>
                 <input
                     className='form-input'
@@ -192,7 +203,7 @@ const AddHomeForm = () => {
                     onChange={e=>setLongitude(e.target.value)}
                 >
                 </input>
-            </div>
+            </div> */}
             <div className='form-input-container'>
                 <label className='form-label' >No. Beds</label>
                 <input
