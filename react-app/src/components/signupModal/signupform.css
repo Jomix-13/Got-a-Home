@@ -1,36 +1,35 @@
 .outside_signup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-bottom: 5px;
 
-  
-  width: 375px;
-  height: 500px;
-  background-color:rgb(17, 17, 156);
-  border-radius: 15%;
-  font-size: 17px;
-  color: white;
-  /* b  order: 4px solid rgb(44, 80, 189) */
+	width: 375px;
+	height: 500px;
+	background-color: rgb(126, 163, 187);
+	border-radius: 15%;
+	font-size: 17px;
+	color: white;
+	/* b  order: 4px solid rgb(44, 80, 189) */
 }
 
 .error {
-  color: rgb(236, 94, 94);
-  font-style: italic;
+	color: rgb(236, 94, 94);
+	font-style: italic;
 }
 
 .ds {
-  font-family: "Prompt", sans-serif;
-  font-weight: bolder;
-  font-size: 17px;
-  text-transform: uppercase;
-  border-radius: 30px;
-  background-color: rgb(17, 17, 156);
-  color: white;
-  padding: 15px 25px;
-  border: 3px solid rgb(17, 17, 156);
-  width: 150px;
+	font-family: 'Prompt', sans-serif;
+	font-weight: bolder;
+	font-size: 17px;
+	text-transform: uppercase;
+	border-radius: 30px;
+	background-color: rgb(126, 163, 187);
+	color: white;
+	padding: 15px 25px;
+	border: 3px solid rgb(126, 163, 187);
+	width: 150px;
 }
 /* .form-div {
   display: flex;

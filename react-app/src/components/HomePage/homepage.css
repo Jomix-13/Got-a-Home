@@ -1,62 +1,58 @@
-.homepage{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0px 10px 0px 5px;
-    text-decoration: none;
+.homepage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 0px 10px 0px 5px;
+	text-decoration: none;
 }
-.map{
-    width: 100%;
+.map {
+	width: 100%;
 }
-.aallHomes{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 25px 5px;
-    border-radius: 15px;
-    padding: 5px;
-    align-items:center;
-    width: 100%;
-    text-decoration: none;
-    overflow:scroll;
-    height: 100vh;
+.aallHomes {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 25px 5px;
+	border-radius: 15px;
+	padding: 5px;
+	align-items: center;
+	width: 100%;
+	text-decoration: none;
+	overflow: scroll;
+	height: 100vh;
 }
 
-.aallHomes img{
-    width: 250px;
-    height: 145px;
-    border-radius: 5px;
+.aallHomes img {
+	width: 250px;
+	height: 145px;
+	border-radius: 5px;
 }
 
 .oneHome {
-    
-    border: 1px solid rgb(17, 17, 156);
-    border-radius: 15px;
-    width: auto;
-    height: 250px;
-    align-items:center;
-    padding: 5px;
-    text-decoration: none;
+	border: 1px solid rgb(126, 163, 187);
+	border-radius: 15px;
+	width: auto;
+	height: 250px;
+	align-items: center;
+	padding: 5px;
+	text-decoration: none;
 }
 
-
-.aallHomes a{
-    text-decoration: none;
-    color: rgb(17, 17, 156);
+.aallHomes a {
+	text-decoration: none;
+	color: rgb(126, 163, 187);
 }
 
-.pri{
-    font-weight: bolder;
-    font-size: larger;
-    padding-top: 10px;
+.pri {
+	font-weight: bolder;
+	font-size: larger;
+	padding-top: 10px;
 }
 
-
-.ho{
-    margin-left: 15px;
+.ho {
+	margin-left: 15px;
 }
 
-.aallHomes :hover{
-    background-color: rgb(17, 17, 156);
-    color: white;
-    border-radius: 15px;
-
+.aallHomes :hover {
+	background-color: rgb(126, 163, 187);
+	color: white;
+	border-radius: 15px;
 }
