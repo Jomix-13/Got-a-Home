@@ -75,27 +75,16 @@ const OneHome = () => {
             {user?.id === home?.userId ?
             <div>
                 <EditHomeFormModal/>
-                {/* <NavLink to={`/update/${home.id}`} alt="">
-                    <button className='button'>
-                        Modify
-                    </button>
-                </NavLink> */}
                 <button className='button' onClick={e=>deleteHome(e,home.id)}>Sold</button>
             </div>
              : null }
-            {/* <div>
-            <div></div>
-            <div className='photos'>
-                <img src={home?.images[0]} alt=''></img>
-            </div>
-            <div></div>
-            </div> */}
             <div className='photos'>
                 {home?.images?.map((image)=>(
                     <img key={image} src={image} alt=''></img>
-                    ))}
+                ))}
             </div>
             <div className='HomeData'>
+            <div className='HomeData2'>
                 <div>
                     <div className='price'>
                     <CurrencyFormat value={home.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
@@ -119,10 +108,11 @@ const OneHome = () => {
                         <div className='BB'>{home.beds} Bedrooms, {home.bath} Bathrooms</div>
                     </div>
                 </div>
+                </div>
 
                 <div>
-                <button className='button' onClick={()=>Previous(homes,home.id)}>Previous</button>
-                <button className='button' onClick={()=>Next(homes,home.id)}>Next</button>
+                <button className='button' onClick={()=>Previous(homes,home.id)}>&laquo; Previous</button>
+                <button className='button' onClick={()=>Next(homes,home.id)}>Next &raquo;</button>
 
                 </div>
             <div className='qupa'>

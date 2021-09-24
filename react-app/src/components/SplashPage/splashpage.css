@@ -1,50 +1,60 @@
-.All{
+/* .All{
   min-height: 750px;
-}
+} */
 .i {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  background-image: url('https://i.imgur.com/q6UCnKl.png');
-  background-size: contain;
-  background-size: 100% 100%;
+  position: relative;
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	background-image: url('https://webassets.inman.com/wp-content/uploads/2018/01/shutterstock_752498263-1400x621.jpg');
+	background-size: contain;
+	background-size: 100% 100%;
 
-  width: 100%;
-  height: 700px;
+	width: 100%;
+	height: 700px;
 }
 
-.i img{
+/* .i img{
     width: 100%;
     height: 400px;
     margin: 0;
+} */
+
+/* .searchbar {
+  position:absolute;
+  left:60%;
+  top:75%;
+  width:30%;
+  background-color:white;
+  color:grey;
+} */
+
+
+
+.slo {
+	display: flex;
+	font-size: 80px;
+	color: yellow;
 }
 
-.slo{
-  display: flex;
-  font-size: 80px;
-  color: yellow;
-
-}
-
-.container{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  /* height: 400px; */
-  margin: 0;
-  padding: 0;
-  border: 0;
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	/* height: 400px; */
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 .container img {
-  width: 250px;
-  height: 99px;
-  margin: 0;
-  padding: 0;
-  border: 0;
+	width: 250px;
+	height: 99px;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
-
 
 /* .each {
   width: 100%;
@@ -52,42 +62,77 @@
   object-fit: cover;
 } */
 
-
 /* (A) FIXED WRAPPER */
 .hwrap2 {
-    overflow:hidden; /* HIDE SCROLL BAR */
-    background: rgb(17, 17, 156);
-    width: auto;
-    height: 55px;
-  }
-.hwrap2 img{
-    width: auto;
-    height: 55px;
-  }
-   
-  /* (B) MOVING TICKER WRAPPER */
-  .hmove2 { display: flex; }
-  
-  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
-  .hitem2 {
-    flex-shrink: 0;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-around;
-    font-size: 20px;
-    font-weight: bold;
-  }
-   
-  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
-  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
-  @keyframes tickerh {
-    0% { transform: translate3d(100%, 0, 0); }
-    100% { transform: translate3d(-300%, 0, 0); }
-  }
-  .hmove2 { animation: tickerh linear 30s infinite; }
-  /* .hmove2:hover { animation-play-state: paused; } */
+	overflow: hidden; /* HIDE SCROLL BAR */
+	/* background: rgb(126,163,187); */
+	background: rgb(126, 163, 187);
+	width: auto;
+	height: 55px;
+}
+.hwrap2 img {
+	width: auto;
+	height: 55px;
+}
+
+/* (B) MOVING TICKER WRAPPER */
+.hmove2 {
+	display: flex;
+}
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem2 {
+	flex-shrink: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+	0% {
+		transform: translate3d(100%, 0, 0);
+	}
+	100% {
+		transform: translate3d(-300%, 0, 0);
+	}
+}
+.hmove2 {
+	animation: tickerh linear 30s infinite;
+}
+/* .hmove2:hover { animation-play-state: paused; } */
+#myInput {
+	position:absolute;
+	left: 20%;
+	top: 73%;
+	background-position: 10px 12px; /* Position the search icon */
+	background-repeat: no-repeat; /* Do not repeat the icon image */
+	width: 17%; /* Full-width */
+	font-size: 25px; /* Increase font-size */
+	padding: 12px 20px 12px 40px; /* Add some padding */
+	border: 1px solid #ddd; /* Add a grey border */
+	margin-bottom: 12px; /* Add some space below the input */
+	background-color: rgb(224, 222, 218);
+}
+
+.search-results {
+  position: absolute;
+  left: 20%;
+  top: 82%;
+  border-radius: 20px;
+  padding: 10px;
+  width: 700px;
+  font-family: "Prompt";
+  font-size: 15px;
+  z-index: 1;
+  background-color: rgb(224, 222, 218);
+
+}

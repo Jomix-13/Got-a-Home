@@ -1,109 +1,115 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(17, 17, 156);
-    align-items: center;
-
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	background-color: rgb(126, 163, 187);
+	align-items: center;
 }
 
-.homeButton img{
-    width: 150px;
-    height: auto;
-    margin: 15px 0 15px 0;
+.homeButton img {
+	width: 150px;
+	height: auto;
+	margin: 15px 0 15px 0;
+}
+.homeButton a{
+	width: 150px;
+	height: auto;
+	margin: 15px 0 15px 0;
+	color: white;
+	text-decoration: none;
 }
 
-.homeButton{
-    margin-left: 50px;
+.loggedin,
+.notloggedin {
+	margin-right: 40px;
+	display: flex;
+	width: 400px;
+	justify-content: space-between;
+
+	align-items: flex-start;
+	flex-direction: row;
+
+	cursor: pointer;
 }
 
-.loggedin, .notloggedin{
-    margin-right: 40px;
-    display: flex;
-    width: 400px;
-    justify-content: space-between;
-
-    align-items: flex-start;
-    flex-direction: row;
-
-    cursor: pointer;
+.pointer:hover {
+	cursor: pointer;
 }
-
-.pointer:hover{
-  cursor: pointer;
-}
-
-.io img{
-  width: 400px;
-  height: 90px;
+/* .io{
+	display: flex;
+	flex-direction: row;
+} */
+.io img {
+	width: 400px;
+	height: 70px;
 }
 
 .d {
-  font-family: "Prompt", sans-serif;
-  font-weight: bolder;
-  font-size: 17px;
-  text-transform: uppercase;
-  border-radius: 30px;
-  background-color: rgb(17, 17, 156);
-  color: white;
-  padding: 15px 25px;
-  border: 3px solid rgb(17, 17, 156);
+	font-family: 'Prompt', sans-serif;
+	font-weight: bolder;
+	font-size: 17px;
+	text-transform: uppercase;
+	border-radius: 30px;
+	background-color: rgb(126, 163, 187);
+	color: white;
+	padding: 15px 25px;
+	border: 3px solid rgb(126, 163, 187);
 }
 
-.pp{
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-
+.pp {
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
 }
 
-.pp img{
-  overflow-x: hidden;
-  overflow-y: hidden;
-  border-radius: 700px;
-  height: 60px;
-  width: 60px;
-  background-color: rgb(50, 50, 50);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid white;
+.pp img {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	border-radius: 700px;
+	height: 60px;
+	width: 60px;
+	background-color: rgb(50, 50, 50);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid white;
+	margin-left: 10px;
 }
- 
-
 
 /* (A) FIXED WRAPPER */
 .hwrap {
-    overflow: hidden; /* HIDE SCROLL BAR */
-    background: #eee;
-  }
-   
-  /* (B) MOVING TICKER WRAPPER */
-  .hmove { display: flex; }
-  
-  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
-  .hitem {
-    flex-shrink: 0;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    text-align: center;
-    color: wheat;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-around;
-    font-size: 20px;
-    font-weight: bold;
-  }
+	overflow: hidden; /* HIDE SCROLL BAR */
+	background: rgb(126, 163, 187);
+}
 
-  .hitem a{
-    text-decoration: none;
-  }
-   
+/* (B) MOVING TICKER WRAPPER */
+.hmove {
+	display: flex;
+}
 
-  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
-  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
+	flex-shrink: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	text-align: center;
+	color: wheat;
+	text-decoration: none;
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.hitem a {
+	text-decoration: none;
+	color: white;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS
   @keyframes tickerh {
     0% { transform: translate3d(100%, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }

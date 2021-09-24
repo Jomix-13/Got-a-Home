@@ -1,127 +1,131 @@
-.all{
-    /* padding: 0px 250px 0px 250px; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.all {
+	/* padding: 0px 250px 0px 250px; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-/* .HomeData{
+	/* .HomeData{
     border-bottom: 1px black solid;
 } */
-
 }
-.photos{
-    display: flex;
-    align-items:center;
-}
-
-.all img{
-    width:500px;
-    height: 500px;
-}
-.price{
-    align-items:center;
-    justify-items: center;
-    font-size: 50px;
+.photos {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
 }
 
-.status{
-    font-size: 35px;
+.all img {
+	width: 500px;
+	height: 500px;
+}
+.price {
+	align-items: center;
+	justify-items: center;
+	font-size: 50px;
 }
 
-.descriptions{
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
+.status {
+	font-size: 35px;
+}
+
+.descriptions {
+	font-size: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 /* .qupa{
     pa
 } */
 
 .qu {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgb(17, 17, 156);
-    border-radius: 15px;
-    width: auto;
-    height: 25px;
-    align-items:center;
-    padding: 5px;
-    text-decoration: none;
-    margin-top: 10px; 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid rgb(126, 163, 187);
+	border-radius: 15px;
+	width: auto;
+	height: 25px;
+	align-items: center;
+	padding: 5px;
+	text-decoration: none;
+	margin-top: 10px;
 }
 
 .allqu {
-    overflow:scroll;
-    height: 250px;
+	overflow: scroll;
+	height: 250px;
 }
 
 .button {
-    font-family: "Prompt", sans-serif;
-    font-weight: bolder;
-    font-size: 17px;
-    text-transform: uppercase;
-    border-radius: 30px;
-    background-color: rgb(17, 17, 156);
-    color: white;
-    padding: 15px 25px;
-    border: 3px solid rgb(17, 17, 156);
-  }
+	font-family: 'Prompt', sans-serif;
+	font-weight: bolder;
+	font-size: 17px;
+	text-transform: uppercase;
+	border-radius: 30px;
+	background-color: rgb(126, 163, 187);
+	color: white;
+	padding: 15px 25px;
+	border: 3px solid rgb(126, 163, 187);
+}
 
 .bb {
-    font-family: "Prompt", sans-serif;
-    font-weight: bolder;
-    font-size: 10px;
-    text-transform: uppercase;
-    border-radius: 15px;
-    background-color: rgb(17, 17, 156);
-    color: white;
-    padding: 15px 25px;
-    border: 3px solid rgb(17, 17, 156);
-    height: 20px;
+	font-family: 'Prompt', sans-serif;
+	font-weight: bolder;
+	font-size: 10px;
+	text-transform: uppercase;
+	border-radius: 15px;
+	background-color: rgb(126, 163, 187);
+	color: white;
+	padding: 15px 25px;
+	border: 3px solid rgb(126, 163, 187);
+	height: 20px;
 }
 
-
-.onerow{
-    display:flex;
-    flex-direction: row;
+.onerow {
+	display: flex;
+	flex-direction: row;
 }
 
-.HomeData{
-    border-bottom:5px black solid;
+/* .HomeData {
+	position:absolute;
+
+} */
+
+.HomeData2 {
+	border-bottom: 5px black solid;
+	margin-bottom: 15px;
+	/* width: 100vw; */
 }
 
-.price{
-    margin-bottom: 5px;
+.price {
+	margin-bottom: 5px;
 }
-.status{
-    margin-bottom: 5px;
+.status {
+	margin-bottom: 5px;
 }
-.descriptions{
-    margin-bottom: 5px;
+.descriptions {
+	margin-bottom: 5px;
 }
-.adress{
-    margin-bottom: 5px;
-}
-
-.city{
-    margin-bottom: 5px;
+.adress {
+	margin-bottom: 5px;
 }
 
-.lotSize{
-    margin-bottom: 5px;
-    color: grey;
+.city {
+	margin-bottom: 5px;
 }
 
-.BB{
-    margin-bottom: 5px;
-    color: grey;
-
+.lotSize {
+	margin-bottom: 5px;
+	color: grey;
 }
 
-.Note{
-    color: red;
-    padding-top: 5px;
+.BB {
+	margin-bottom: 5px;
+	color: grey;
+}
 
+.Note {
+	color: red;
+	padding-top: 5px;
 }

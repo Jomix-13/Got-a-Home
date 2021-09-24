@@ -1,50 +1,55 @@
-.homepage{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0px 10px 0px 5px;
+.homepage {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 0px 10px 0px 5px;
 }
-.map{
-    width: 100%;
+.map {
+	width: 100%;
 }
-.allHomes{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 25px 5px;
-    border-radius: 15px;
-    padding: 5px;
-    align-items:center;
-    width: 100%;
-    text-decoration: none;
-    overflow:scroll;
-    height: 100vh;
+.allHomes {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 25px 5px;
+	border-radius: 15px;
+	padding: 5px;
+	align-items: center;
+	width: 100%;
+	text-decoration: none;
+	overflow: scroll;
+	height: 100vh;
 }
 
-.allHomes img{
-    width: 250px;
-    height: 145px;
-    border-radius: 5px;
-
+.allHomes img {
+	width: 250px;
+	height: 145px;
+	border-radius: 5px;
 }
 
 .oneHome2 {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgb(17, 17, 156);
-    border-radius: 15px;
-    width: auto;
-    height: 275px;
-    align-items:center;
-    padding: 5px;
-    text-decoration: none;
-    }
-    
-.allHomes a{
-    text-decoration: none;
-    color: brown;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgb(126, 163, 187);
+	border-radius: 15px;
+	width: auto;
+	height: 275px;
+	align-items: center;
+	padding: 5px;
+	text-decoration: none;
 }
-    
-.pric{
-    padding: 7px;
-    font-weight: bolder;
-    font-size: larger;
+
+.allHomes a {
+	text-decoration: none;
+	color: brown;
+}
+
+.pric {
+	padding: 7px;
+	font-weight: bolder;
+	font-size: larger;
+}
+
+.allHomes :hover {
+	background-color: rgb(126, 163, 187);
+	color: white;
+	border-radius: 15px;
 }

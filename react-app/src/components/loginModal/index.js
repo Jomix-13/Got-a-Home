@@ -8,7 +8,9 @@ function LoginFormModal() {
 
     return (
         <>
-            <button className='d pointer' id='login-btn' onClick={() => setShowModal(true)}>Log In
+            <button className='d pointer' id='login-btn' onClick={() => setShowModal(true)}>
+            <i class="fas fa-sign-in-alt"></i>
+
             {/* <i class="far fa-house-return"></i> */}
             </button>
             {showModal && (

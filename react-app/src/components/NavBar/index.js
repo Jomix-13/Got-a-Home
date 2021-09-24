@@ -29,12 +29,16 @@ const NavBar = () => {
       <div className='navbar'>
         <div className='homeButton'>
           <NavLink to='/homes' exact={true} activeClassName='active'>
-            <img src='https://i.imgur.com/vZ0TUsl.png' alt=""/>
+            <div className='home'>
+              HOME
+            </div>
+            {/* <img src='https://i.imgur.com/vZ0TUsl.png' alt=""/> */}
           </NavLink>
         </div>
         <div className='io'>
           <NavLink to='/' exact={true} activeClassName='active'>
-            <img src='https://i.imgur.com/Xc4j024.png' alt=''></img>
+            <i class="fas fa-search"></i>
+            {/* <img src='https://i.imgur.com/Rine4Vb.png'/> */}
           </NavLink>
         </div>
         {!user ?
@@ -71,7 +75,8 @@ const NavBar = () => {
             </div>
         </div> }
       </div>
-      <div className="hwrap"><div className="hmove">
+      <div className="hwrap">
+        <div className="hmove">
         <div className="hitem">
             <NavLink to='/buyhomes' alt=''>Buy</NavLink>
 
