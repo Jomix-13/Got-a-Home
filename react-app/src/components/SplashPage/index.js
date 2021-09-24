@@ -71,7 +71,7 @@ const SplashPage = () =>{
                     </input>
                     {search &&
                         <select className='search-results' onChange={toPage} size={searchHomes.length + searchCity.length + 2}>
-                                {/* <option className='search-results-title'>Search Homes Results ({searchHomes.length})</option> */}
+                                <option className='search-results-title'>({searchHomes.length + searchCity.length} results)</option>
                             {searchHomes.map(home => (
                                 <option key={home.id} value={'home' + home.id}>{home.stAddress}, {home.city}, {home.state}, {home.Zipcode}</option>
                             ))}
