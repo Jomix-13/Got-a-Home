@@ -5,10 +5,8 @@
 	align-items: center;
 }
 
-.homeButton img {
-	width: 150px;
-	height: auto;
-	margin: 15px 0 15px 0;
+.homeButton  {
+	margin-left: 20px;
 }
 .homeButton a{
 	width: 150px;
@@ -116,3 +114,29 @@
   }
   .hmove { animation: tickerh linear 30s infinite; }
   .hmove:hover { animation-play-state: paused; } */
+
+  .searchnavbar{
+	  display: flex;
+	  flex-direction: row;
+  }
+
+  #myInput2 {
+	background-repeat: no-repeat; 
+	width: 300px; /* Full-width */
+	font-size: 16px; /* Increase font-size */
+	border: 1px solid #ddd; /* Add a grey border */
+	background-color: rgba(126, 163, 187);;
+}
+.search-results2 {
+	position: absolute;
+	left: 220px;
+	top: 40px;
+	border-radius: 20px;
+	padding: 10px;
+	width: 700px;
+	font-family: "Prompt";
+	font-size: 16px;
+	z-index: 1;
+	background-color: rgba(126, 163, 187);
+  
+  }

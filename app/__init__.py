@@ -14,7 +14,7 @@ from .api.questions_routes import question_routes
 from .seeds import seed_commands
 
 from .config import Config
-
+print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>test')
 app = Flask(__name__)
 
 # Setup login manager
