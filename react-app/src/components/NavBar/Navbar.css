@@ -138,5 +138,5 @@
 	font-size: 16px;
 	z-index: 1;
 	background-color: rgba(126, 163, 187);
-  
+	overflow: hidden;
   }

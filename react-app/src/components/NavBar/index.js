@@ -98,10 +98,7 @@ const NavBar = () => {
         {!user ?
         <div className='notloggedin'>
             <div>
-            {/* <NavLink to='/login' exact={true} activeClassName='active'>
-                Login
-            </NavLink> */}
-            <LoginFormModal className='d '></LoginFormModal>
+            <SignupFormModal className='d'></SignupFormModal>
             </div>
             <div>
                 <button className='d pointer' onClick={dempButton}>
@@ -109,10 +106,7 @@ const NavBar = () => {
                 </button>
             </div>
             <div>
-            {/* <NavLink to='/sign-up' exact={true} activeClassName='active'>
-                Sign Up
-            </NavLink> */}
-            <SignupFormModal className='d'></SignupFormModal>
+            <LoginFormModal className='d '></LoginFormModal>
             </div>
         </div> :
         <div className='loggedin'>

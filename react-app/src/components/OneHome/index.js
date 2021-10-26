@@ -15,6 +15,7 @@ import './onehome.css'
 
 const OneHome = () => {
     const {id} = useParams()
+    console.log(id, 'ONEHOOOOOOME')
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -80,13 +81,18 @@ const OneHome = () => {
             </div>
              : null }
             <div className='top'>
+            {/* <div className='picncalc'> */}
             <div className='photos'>
+                {/* <img  key={home?.images?.[0]} src={home?.images?.[0]} alt=''></img> */}
                 {home?.images?.map((image)=>(
                     <img key={image} src={image} alt=''></img>
                 ))}
             </div>
-                <Calculator home={home} id={home.id}></Calculator>
+            <div className='calc'>
+                <Calculator home={home} id={{id}}></Calculator>
             </div>
+            </div>
+            {/* </div> */}
             <div className='HomeData'>
             <div>
             <div className='HomeData2'>

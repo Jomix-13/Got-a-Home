@@ -8,17 +8,21 @@ import {fetchOneHome,fetchDeleteHome} from '../../store/home'
 
 
 
+
 import './calc.css'
 
-function Calculator(home,id) {
+function Calculator(home) {
     // let homeId = home.home.id
     const dispatch = useDispatch()
-
-    console.log(id)
+    const id = home.home.id
+    console.log(id,'CALC')
     console.log(home.home.price)
-    console.log()
+    console.log(home)
+
     useEffect(()=>{
+        console.log(id)
         dispatch(fetchOneHome(id))
+        
     },[dispatch,id])
 
     const term = ['30-yr fixed','20-yr fixed','15-yr fixed'
@@ -26,14 +30,21 @@ function Calculator(home,id) {
                 ]
     const [homevalue , setHomevalue] = useState(home.home.price)
     const [downpayment , setDownpayment] = useState((home.home.price * 0.20))
-    // const [loanamount , setLoanamount] = useState(home.home.price - downpayment)
     const [loanterm , setLoanterm] = useState(term[0])
     const [interestRate , setInterestRate] = useState(4)
     const [monthlypaymet , setMonthlypayment] = useState('')
+    const [loanamount , setLoanamount] = useState(homevalue-downpayment)
+    
 
+    useEffect(()=>{
+        setHomevalue(home.home.price)
+        setLoanterm(term[0])
+        setDownpayment(home.home.price * 0.20)
+        
+    },[dispatch,home])
     // useEffect(()=>{
     //     if(loanamount + downpayment > homevalue){
-    //         loanamount = homevalue - downpayment
+    //         setLoanamount(homevalue - downpayment)
     //     }
     // },[downpayment])
     // useEffect(()=>{
@@ -57,13 +68,13 @@ function Calculator(home,id) {
         }
         if( loanterm === '20-yr fixed'){
             n = 240
-            M = P * ( i * ((1 + i)^n) ) / ( (1 + i)^(n - 1))
-            return M
+            M = P * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+            return M.toFixed(2)
         }
         if( loanterm === '15-yr fixed'){
             n = 180
-            M = P * ( i * ((1 + i)^n) ) / ( (1 + i)^(n - 1))
-            return M
+            M = P * i * (Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+            return M.toFixed(2)
         }
     }
 
@@ -71,21 +82,27 @@ function Calculator(home,id) {
         <div className='CalcContainer'>
             <div className='value'>
             <div> Home Value </div>
-                {homevalue}
+                {/* {homevalue} */}
+            <CurrencyFormat value={homevalue} displayType={'text'} thousandSeparator={true} prefix={'$'} />
             </div>
             <div className='value'>
                 <div> Loan Amount </div>
+            <CurrencyFormat value={homevalue - downpayment} displayType={'text'} thousandSeparator={true} prefix={'$'} />
 
-                {homevalue - downpayment}
+                {/* {homevalue - downpayment} */}
             </div>
             <div className='value'>
+
                 <div> Down Payment </div>
+                <div className='subvalue'>
+                <div>$</div>
                 <input
                     className=''
                     value={downpayment}
                     onChange={e=>setDownpayment(e.target.value)}
                 >
                 </input>
+            </div>
             </div>
             <div className='value'>
                 <div> loan Term </div>
@@ -118,7 +135,8 @@ function Calculator(home,id) {
             <div className='value'>
                 <div> monthly Paymet </div>
                 <div className=''>
-                    {monthlyPaymet()}
+                <CurrencyFormat value={monthlyPaymet()} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                    {/* {monthlyPaymet()} */}
                 </div>
             </div>
             <div className='value'> ## Taxes and insurance are not included</div>
