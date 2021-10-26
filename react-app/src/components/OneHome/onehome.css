@@ -1,6 +1,7 @@
 .all {
 	/* padding: 0px 250px 0px 250px; */
-	display: flex;
+	/* display: flex; */
+	padding: 50px;
 	flex-direction: column;
 	align-items: center;
 
@@ -11,11 +12,14 @@
 .photos {
 	margin-top: 10px;
 	display: flex;
+	flex-direction:column;
 	align-items: center;
+	width: auto;
+
 }
 
 .all img {
-	width: 500px;
+	width: 50vw;
 	height: 500px;
 }
 .price {
@@ -87,10 +91,12 @@
 	flex-direction: row;
 }
 
-/* .HomeData {
-	position:absolute;
+.top {
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-between; */
 
-} */
+}
 
 .HomeData2 {
 	border-bottom: 5px black solid;
@@ -128,4 +134,18 @@
 .Note {
 	color: red;
 	padding-top: 5px;
+}
+
+.buttonsdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calc{
+	display: flex;
+	/* flex-direction: ; */
+	justify-content: flex-start;
+	align-items: flex-start;
 }

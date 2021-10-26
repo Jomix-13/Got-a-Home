@@ -1,0 +1,25 @@
+.CalcContainer{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    /* align-items: center; */
+}
+
+.value{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: blue;
+    font-size: 20px;
+    /* font-weight: 300; */
+}
+
+.subvalue{
+    display: flex;
+    flex-direction: row;
+    /* align-items: flex-start; */
+    /* justify-content: flex-end; */
+}

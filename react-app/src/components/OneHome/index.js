@@ -7,6 +7,7 @@ import EditQuestionFormModal from '../EditQuestionModal'
 import EditHomeFormModal from '../EditHome'
 import AddQuestionForm from '../AddQuestion'
 import CurrencyFormat from 'react-currency-format';
+import Calculator from "../mortgage calculator"
 
 
 import './onehome.css'
@@ -14,6 +15,7 @@ import './onehome.css'
 
 const OneHome = () => {
     const {id} = useParams()
+    console.log(id, 'ONEHOOOOOOME')
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -73,17 +75,26 @@ const OneHome = () => {
     return (
         <div className='all'>
             {user?.id === home?.userId ?
-            <div>
+            <div className='buttonsdiv'>
                 <EditHomeFormModal/>
                 <button className='button' onClick={e=>deleteHome(e,home.id)}>Sold</button>
             </div>
              : null }
+            <div className='top'>
+            {/* <div className='picncalc'> */}
             <div className='photos'>
+                {/* <img  key={home?.images?.[0]} src={home?.images?.[0]} alt=''></img> */}
                 {home?.images?.map((image)=>(
                     <img key={image} src={image} alt=''></img>
                 ))}
             </div>
+            <div className='calc'>
+                <Calculator home={home} id={{id}}></Calculator>
+            </div>
+            </div>
+            {/* </div> */}
             <div className='HomeData'>
+            <div>
             <div className='HomeData2'>
                 <div>
                     <div className='price'>
@@ -109,8 +120,8 @@ const OneHome = () => {
                     </div>
                 </div>
                 </div>
-
-                <div>
+                </div>
+                <div className='buttonsdiv'>
                 <button className='button' onClick={()=>Previous(homes,home.id)}>&laquo; Previous</button>
                 <button className='button' onClick={()=>Next(homes,home.id)}>Next &raquo;</button>
 
