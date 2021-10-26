@@ -16,4 +16,4 @@ jobs:
             - name: Build and push
               run: heroku container:push -a gotahome web
             - name: Release
-              run: heroku container:release -a  web
+              run: heroku container:release -a gotahome web

@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import {fetchAllHomes} from '../../store/home'
-import Map from '../googlemap'
+import { useDispatch } from 'react-redux'
 import CurrencyFormat from 'react-currency-format';
-import {fetchOneHome,fetchDeleteHome} from '../../store/home'
-
-
+import {fetchOneHome} from '../../store/home'
 
 
 import './calc.css'
