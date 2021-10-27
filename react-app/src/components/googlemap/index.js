@@ -34,11 +34,10 @@ function Map () {
           <img src="https://i.imgur.com/B9Qsgm7.png" alt =""></img>
         </div>
       )
-
     return (
       <div className='googleMap'>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyBUDoNSCh1np3t8RCyZ-BZRkbjMFb_9Gyg' }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY }}
           defaultCenter={bayarea.center}
           defaultZoom={bayarea.zoom}
         >
