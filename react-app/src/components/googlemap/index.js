@@ -3,12 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
-import Geocode from "react-geocode";
 
 import { fetchAllHomes } from '../../store/home';
 import './map.css'
-
-
 
 function Map () {
 
@@ -28,7 +25,6 @@ function Map () {
     zoom: 9
   };
 
-  //right one  
     const Marker = ({ lat, lng }) => (
       <div className="mapMarker">
           <img src="https://i.imgur.com/B9Qsgm7.png" alt =""></img>
